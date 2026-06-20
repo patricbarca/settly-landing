@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Settly — group expenses, drama-free</title>
+    <meta name="description" content="Settly splits the group bill for you. Scan the receipt or just say it out loud and AI assigns each item to each person." />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <header class="nav">
+      <div class="nav-inner">
+        <a class="brand" href="#">
+          <span class="logo">
+            <svg width="30" height="30" viewBox="0 0 48 48" fill="none">
+              <rect x="3" y="3" width="42" height="42" rx="13" fill="url(#g)" />
+              <circle cx="19" cy="24" r="9" fill="#fff" fill-opacity="0.92" />
+              <circle cx="29" cy="24" r="9" fill="#fff" fill-opacity="0.5" />
+              <path d="M15.6 24.4l2.7 2.7 5.1-5.6" stroke="#5B5BF0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+              <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5B5BF0" /><stop offset="0.55" stop-color="#0FA3A3" /><stop offset="1" stop-color="#0EA5E9" /></linearGradient></defs>
+            </svg>
+          </span>
+          <span class="brand-name">Settly</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#features" data-es="Funciones">Features</a>
+          <a href="#demo" data-es="Cómo funciona">How it works</a>
+          <span class="lang-toggle"><button data-lang="en">EN</button><button data-lang="es">ES</button></span>
+          <a class="btn-dark" href="#cta" data-es="Probar Settly">Try Settly</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-sec">
+      <div class="hero-copy">
+        <div class="hero-title">
+          <h1 data-es-html="Gastos en grupo,<br>sin líos.">Group expenses,<br />drama-free.</h1>
+          <span class="tag-ai" data-es="Impulsado por IA">Powered by AI</span>
+        </div>
+        <p class="lead" data-es="Escanea el recibo o dilo en voz alta. Settly detecta los platos, los reparte entre tus amigos y deja las cuentas claras al instante.">
+          Scan the receipt or just say it out loud. Settly reads the dishes, splits them between
+          your friends and settles the accounts in seconds.
+        </p>
+        <div class="hero-actions">
+          <a class="btn-dark big" href="#cta" data-es="Crear mi primer grupo">Create my first group</a>
+          <a class="btn-ghost big" href="#demo" data-es="Ver cómo funciona">See how it works</a>
+        </div>
+      </div>
+
+      <!-- phone mockup: animated app tour -->
+      <div class="phone-wrap" data-slideshow>
+        <div class="phone">
+          <div class="phone-screen slides">
+
+            <!-- A · Home: your groups -->
+            <div class="slide on">
+              <div class="home-head">
+                <svg width="24" height="24" viewBox="0 0 48 48" fill="none"><rect x="3" y="3" width="42" height="42" rx="13" fill="url(#g)"/><circle cx="19" cy="24" r="9" fill="#fff" fill-opacity=".92"/><circle cx="29" cy="24" r="9" fill="#fff" fill-opacity=".5"/><path d="M15.6 24.4l2.7 2.7 5.1-5.6" stroke="#5B5BF0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Settly
+              </div>
+              <div class="sub-lbl" data-es="Tus grupos">Your groups</div>
+              <div class="mini-group">
+                <svg width="38" height="38" viewBox="0 0 38 38"><g transform="translate(19,19) rotate(-90)"><circle r="15" fill="none" stroke="rgba(0,0,0,.1)" stroke-width="5"/><circle r="15" fill="none" stroke="#0FA3A3" stroke-width="5" stroke-linecap="round" stroke-dasharray="75 95"/></g><text x="19" y="20" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="800" fill="#1a1c22" font-family="'Space Mono',monospace">80</text></svg>
+                <div class="mg-body"><div class="mg-name" data-es="Cena en Roma">Rome dinner</div><div class="mg-meta">4 · 74,50 $ · 1</div></div>
+                <div class="mg-bal" style="color:#0A8B5E">+18,75</div>
+              </div>
+              <div class="mini-group">
+                <svg width="38" height="38" viewBox="0 0 38 38"><g transform="translate(19,19) rotate(-90)"><circle r="15" fill="none" stroke="rgba(0,0,0,.1)" stroke-width="5"/><circle r="15" fill="none" stroke="#0FA3A3" stroke-width="5" stroke-linecap="round" stroke-dasharray="94 95"/></g><text x="19" y="20" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="800" fill="#1a1c22" font-family="'Space Mono',monospace">100</text></svg>
+                <div class="mg-body"><div class="mg-name" data-es="Piso compartido">Flat share</div><div class="mg-meta">4 · 398,40 $ · 4</div></div>
+                <div class="mg-bal muted" data-es="al día">settled</div>
+              </div>
+              <div class="mini-group">
+                <svg width="38" height="38" viewBox="0 0 38 38"><g transform="translate(19,19) rotate(-90)"><circle r="15" fill="none" stroke="rgba(0,0,0,.1)" stroke-width="5"/><circle r="15" fill="none" stroke="#E0A400" stroke-width="5" stroke-linecap="round" stroke-dasharray="56 95"/></g><text x="19" y="20" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="800" fill="#1a1c22" font-family="'Space Mono',monospace">60</text></svg>
+                <div class="mg-body"><div class="mg-name" data-es="Finde en la playa">Beach weekend</div><div class="mg-meta">5 · 612,00 $ · 9</div></div>
+                <div class="mg-bal" style="color:#D14444">−24,30</div>
+              </div>
+            </div>
+
+            <!-- B · Group: Expenses -->
+            <div class="slide">
+              <div class="app-hero">
+                <div class="ah-top"><span class="ah-brand">Settly</span><span class="ah-group" data-es="Cena en Roma">Rome dinner</span></div>
+                <div class="ah-row">
+                  <div>
+                    <div class="ah-label" data-es="Tu saldo">Your balance</div>
+                    <div class="ah-balance" data-es="Te deben 18,75&nbsp;$">You're owed 18,75&nbsp;$</div>
+                  </div>
+                  <div class="ring">
+                    <svg viewBox="0 0 64 64" width="54" height="54"><g transform="translate(32,32) rotate(-90)"><circle r="27" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="7"/><circle r="27" fill="none" stroke="#7CF5EE" stroke-width="7" stroke-linecap="round" stroke-dasharray="136 170"/></g><text x="32" y="33" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="800" fill="#fff" font-family="'Space Mono',monospace">80</text></svg>
+                    <div class="ring-cap">Settle Score</div>
+                  </div>
+                </div>
+              </div>
+              <div class="mini-ava-row">
+                <span class="mini-ava" style="background:#0FA3A322;box-shadow:0 0 0 2px #0A8B5E">S</span>
+                <span class="mini-ava" style="background:#5B5BF022;box-shadow:0 0 0 2px #E0A400">A</span>
+                <span class="mini-ava" style="background:#FF5A4D22;box-shadow:0 0 0 2px #E0A400">P</span>
+                <span class="mini-ava" style="background:#E8920C22;box-shadow:0 0 0 2px #0A8B5E">J</span>
+              </div>
+              <div class="mini-tabs"><span class="mini-tab on" data-es="Gastos">Expenses</span><span class="mini-tab" data-es="Saldos">Balances</span><span class="mini-tab" data-es="Logros">Achievements</span></div>
+              <div class="card soft exp">
+                <span class="exp-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a1c22" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v5a2 2 0 0 0 4 0V3"/><path d="M8 8v13"/><path d="M16 3c-1.4 1.2-2 3.4-2 6 0 1.6.7 2.6 2 2.8V21"/></svg></span>
+                <div class="exp-body"><div class="exp-t" data-es="Cena italiana">Italian dinner</div><div class="exp-m muted" data-es="Siena pagó · entre 4">Siena paid · among 4</div></div>
+                <span class="amount">74,50&nbsp;$</span>
+              </div>
+            </div>
+
+            <!-- C · Group: Balances -->
+            <div class="slide">
+              <div class="slim-head" data-es="Cena en Roma">Rome dinner</div>
+              <div class="mini-ava-row">
+                <span class="mini-ava" style="background:#0FA3A322;box-shadow:0 0 0 2px #0A8B5E">S</span>
+                <span class="mini-ava" style="background:#5B5BF022;box-shadow:0 0 0 2px #E0A400">A</span>
+                <span class="mini-ava" style="background:#FF5A4D22;box-shadow:0 0 0 2px #E0A400">P</span>
+                <span class="mini-ava" style="background:#E8920C22;box-shadow:0 0 0 2px #0A8B5E">J</span>
+              </div>
+              <div class="mini-tabs"><span class="mini-tab" data-es="Gastos">Expenses</span><span class="mini-tab on" data-es="Saldos">Balances</span><span class="mini-tab" data-es="Logros">Achievements</span></div>
+              <div class="card soft">
+                <div class="card-head" data-es="Para saldar">To settle up</div>
+                <div class="settle-row"><span class="ava" style="background:#FF5A4D">P</span><b>Patrick</b><span class="muted" data-es="paga a">pays</span><span class="ava" style="background:#0FA3A3">S</span><b>Siena</b><span class="amount">18,75&nbsp;$</span></div>
+                <div class="pills"><span class="pill teal" data-es="Pagar">Pay</span><span class="pill" data-es="Marcar pagado">Mark paid</span></div>
+              </div>
+            </div>
+
+            <!-- D · Group: Achievements -->
+            <div class="slide">
+              <div class="slim-head" data-es="Cena en Roma">Rome dinner</div>
+              <div class="mini-ava-row">
+                <span class="mini-ava" style="background:#0FA3A322;box-shadow:0 0 0 2px #0A8B5E">S</span>
+                <span class="mini-ava" style="background:#5B5BF022;box-shadow:0 0 0 2px #E0A400">A</span>
+                <span class="mini-ava" style="background:#FF5A4D22;box-shadow:0 0 0 2px #E0A400">P</span>
+                <span class="mini-ava" style="background:#E8920C22;box-shadow:0 0 0 2px #0A8B5E">J</span>
+              </div>
+              <div class="mini-tabs"><span class="mini-tab" data-es="Gastos">Expenses</span><span class="mini-tab" data-es="Saldos">Balances</span><span class="mini-tab on" data-es="Logros">Achievements</span></div>
+              <div class="card soft">
+                <div class="card-head" data-es="Logros del grupo">Group achievements</div>
+                <div class="ach-prow"><span class="ava" style="background:#0FA3A3">S</span><div class="ach-info"><div>Siena</div><div class="muted" data-es="Nivel 3">Level 3</div></div><div class="ach-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 10h18"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16"/><path d="M6 7h12l3 5a3 3 0 0 1-6 0zM6 7l-3 5a3 3 0 0 0 6 0z"/><path d="M8 20h8"/></svg></div></div>
+                <div class="ach-prow"><span class="ava" style="background:#FF5A4D">P</span><div class="ach-info"><div>Patrick</div><div class="muted" data-es="Nivel 2">Level 2</div></div><div class="ach-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 10h18"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M21 20a6 6 0 0 0-4.5-5.8"/></svg></div></div>
+                <div class="ach-prow"><span class="ava" style="background:#E8920C">J</span><div class="ach-info"><div>John</div><div class="muted" data-es="Nivel 1">Level 1</div></div><div class="ach-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M21 20a6 6 0 0 0-4.5-5.8"/></svg></div></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="dots">
+          <button class="dot on" data-i="0" aria-label="Home"></button>
+          <button class="dot" data-i="1" aria-label="Expenses"></button>
+          <button class="dot" data-i="2" aria-label="Balances"></button>
+          <button class="dot" data-i="3" aria-label="Achievements"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO STORYBOARD -->
+    <section id="demo" class="demo-sec">
+      <h2 class="sec-title" data-es="De la foto del recibo al reparto, en segundos">From a photo of the receipt to the split, in seconds</h2>
+      <p class="sec-sub" data-es="Un ejemplo real: cena italiana para cuatro.">A real example: Italian dinner for four.</p>
+
+      <div class="demo-stage" data-slideshow>
+        <div class="demo-card slides">
+            <div class="slide on">
+              <div class="slide-body center"><img class="receipt sm" src="assets/receipt.svg" alt="Receipt" /></div>
+              <div class="slide-cap"><b>1</b><span data-es="Sube o haz una foto del recibo.">Snap a photo of the receipt.</span></div>
+            </div>
+
+            <div class="slide">
+              <div class="slide-body list">
+                <div class="li"><span>Pizza Margherita</span><span class="mono">12,50</span></div>
+                <div class="li"><span>Pizza Diavola</span><span class="mono">14,00</span></div>
+                <div class="li"><span>Spaghetti Carbonara</span><span class="mono">13,50</span></div>
+                <div class="li"><span>Caprese</span><span class="mono">9,00</span></div>
+                <div class="li"><span data-es="Vino de la casa">House wine</span><span class="mono">18,00</span></div>
+                <div class="li"><span>Tiramisú</span><span class="mono">7,50</span></div>
+              </div>
+              <div class="slide-cap"><b>2</b><span data-es="La IA detecta los platos y precios.">AI reads the dishes and prices.</span></div>
+            </div>
+
+            <div class="slide">
+              <div class="slide-body center">
+                <div class="bubble">
+                  <span class="mic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/></svg></span>
+                  <span data-es="“La Margherita la compartimos Alexa y yo, Patrick pidió la carbonara, el vino entre todos.”">“Alexa and I shared the Margherita, Patrick had the carbonara, wine between everyone.”</span>
+                </div>
+              </div>
+              <div class="slide-cap"><b>3</b><span data-es="Lo dices por voz o texto.">Say it by voice or text.</span></div>
+            </div>
+
+            <div class="slide">
+              <div class="slide-body list">
+                <div class="li"><span class="who"><span class="ava sm" style="background:#0FA3A3">S</span><span class="ava sm" style="background:#5B5BF0">A</span> Margherita</span><span class="mono" data-es="6,25 c/u">6,25 each</span></div>
+                <div class="li"><span class="who"><span class="ava sm" style="background:#FF5A4D">P</span> Carbonara</span><span class="mono">13,50</span></div>
+                <div class="li"><span class="who"><span class="ava sm" style="background:#0FA3A3">S</span><span class="ava sm" style="background:#5B5BF0">A</span><span class="ava sm" style="background:#FF5A4D">P</span><span class="ava sm" style="background:#E8920C">J</span> <span data-es="Vino">Wine</span></span><span class="mono" data-es="4,50 c/u">4,50 each</span></div>
+              </div>
+              <div class="slide-cap"><b>4</b><span data-es="Asigna cada plato a cada persona.">Assigns each dish to each person.</span></div>
+            </div>
+
+            <div class="slide">
+              <div class="slide-body list">
+                <div class="valid-head" data-es="Reparto final">Final split</div>
+                <div class="li"><span class="who"><span class="ava sm" style="background:#0FA3A3">S</span> Siena</span><span class="mono">22,00&nbsp;$</span></div>
+                <div class="li"><span class="who"><span class="ava sm" style="background:#5B5BF0">A</span> Alexa</span><span class="mono">17,75&nbsp;$</span></div>
+                <div class="li"><span class="who"><span class="ava sm" style="background:#FF5A4D">P</span> Patrick</span><span class="mono">21,75&nbsp;$</span></div>
+                <div class="li"><span class="who"><span class="ava sm" style="background:#E8920C">J</span> John</span><span class="mono">13,00&nbsp;$</span></div>
+                <div class="valid-ok"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0A8B5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span data-es="Verificado · 74,50 $">Verified · 74,50 $</span></div>
+              </div>
+              <div class="slide-cap"><b>5</b><span data-es="Validación y todos confirman.">Validation, everyone confirms.</span></div>
+            </div>
+        </div>
+        <div class="dots">
+          <button class="dot on" data-i="0" aria-label="1"></button>
+          <button class="dot" data-i="1" aria-label="2"></button>
+          <button class="dot" data-i="2" aria-label="3"></button>
+          <button class="dot" data-i="3" aria-label="4"></button>
+          <button class="dot" data-i="4" aria-label="5"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="feat-sec">
+      <h2 class="sec-title" data-es="Todo lo que necesita tu grupo">Everything your group needs</h2>
+      <div class="feat-grid">
+        <article class="feat">
+          <span class="feat-ic">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5B5BF0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M21 20a6 6 0 0 0-4.5-5.8"/></svg>
+          </span>
+          <h3 data-es="Crea grupos en segundos">Create groups in seconds</h3>
+          <p data-es="Un grupo para el viaje, otro para el piso, otro para las cenas. Cada uno con sus cuentas y su divisa.">One group for the trip, one for the flat, one for dinners. Each with its own accounts and currency.</p>
+        </article>
+        <article class="feat">
+          <span class="feat-ic">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0FA3A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7H7l1.3-2h7.4L17 7h2.5A1.5 1.5 0 0 1 21 8.5V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="12.5" r="3.3"/></svg>
+          </span>
+          <h3 data-es="Escanea el recibo">Scan the receipt</h3>
+          <p data-es="Haz una foto y la IA lee los platos y los precios. Marcas quién consumió cada uno y listo.">Snap a photo and AI reads the dishes and prices. Mark who had what and you're done.</p>
+        </article>
+        <article class="feat">
+          <span class="feat-ic">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8920C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/></svg>
+          </span>
+          <h3 data-es="Gasto por voz o texto">Expense by voice or text</h3>
+          <p data-es="“Cena con Alexa y Patrick, pagué 90.” Settly lo interpreta y reparte entre los participantes correctos.">“Dinner with Alexa and Patrick, I paid 90.” Settly interprets it and splits between the right people.</p>
+        </article>
+        <article class="feat">
+          <span class="feat-ic">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A8B5E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16"/><path d="M6 7h12l3 5a3 3 0 0 1-6 0zM6 7l-3 5a3 3 0 0 0 6 0z"/><path d="M8 20h8"/></svg>
+          </span>
+          <h3 data-es="Verificación y saldos claros">Verification &amp; clear balances</h3>
+          <p data-es="Saldos al instante, el mínimo de pagos para saldar, y confirmación de ambas partes al pagar.">Instant balances, the fewest payments to settle, and two-sided confirmation when paying.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="cta-sec">
+      <div class="cta-card">
+        <h2 data-es="Deja de perseguir a tus amigos por dinero.">Stop chasing your friends for money.</h2>
+        <p data-es="Crea tu primer grupo gratis. Sin tarjeta, sin líos.">Create your first group free. No card, no fuss.</p>
+        <a class="btn-light big" href="#" data-es="Probar Settly">Try Settly</a>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <span data-es="Settly · gastos en grupo, sin líos.">Settly · group expenses, drama-free.</span>
+      <span class="muted">© 2026 Settly</span>
+    </footer>
+
+    <script>
+      (function () {
+        var KEY = "settly-landing-lang";
+        function getLang() {
+          try { var l = localStorage.getItem(KEY); if (l === "es" || l === "en") return l; } catch (e) {}
+          return "en";
+        }
+        function apply(lang) {
+          document.documentElement.lang = lang;
+          document.querySelectorAll("[data-es]").forEach(function (el) {
+            if (!el.hasAttribute("data-en")) el.setAttribute("data-en", el.textContent);
+            el.textContent = lang === "es" ? el.getAttribute("data-es") : el.getAttribute("data-en");
+          });
+          document.querySelectorAll("[data-es-html]").forEach(function (el) {
+            if (!el.hasAttribute("data-en-html")) el.setAttribute("data-en-html", el.innerHTML);
+            el.innerHTML = lang === "es" ? el.getAttribute("data-es-html") : el.getAttribute("data-en-html");
+          });
+          document.querySelectorAll("[data-lang]").forEach(function (b) {
+            b.classList.toggle("on", b.getAttribute("data-lang") === lang);
+          });
+        }
+        function setLang(lang) { try { localStorage.setItem(KEY, lang); } catch (e) {} apply(lang); }
+        document.addEventListener("click", function (e) {
+          var b = e.target.closest("[data-lang]");
+          if (b) { e.preventDefault(); setLang(b.getAttribute("data-lang")); }
+        });
+        apply(getLang());
+      })();
+
+      (function () {
+        document.querySelectorAll("[data-slideshow]").forEach(function (root) {
+          var slides = root.querySelectorAll(".slide");
+          var dots = root.querySelectorAll(".dot");
+          if (!slides.length) return;
+          var i = 0,
+            timer;
+          function show(n) {
+            i = n;
+            slides.forEach(function (s, k) { s.classList.toggle("on", k === n); });
+            dots.forEach(function (d, k) { d.classList.toggle("on", k === n); });
+          }
+          function next() { show((i + 1) % slides.length); }
+          function start() { timer = setInterval(next, 2800); }
+          dots.forEach(function (d) {
+            d.addEventListener("click", function () {
+              clearInterval(timer);
+              show(+d.getAttribute("data-i"));
+              start();
+            });
+          });
+          start();
+        });
+      })();
+    </script>
+  </body>
+</html>
