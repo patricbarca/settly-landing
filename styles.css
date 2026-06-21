@@ -296,4 +296,7 @@ h1 { font-size: 58px; font-weight: 800; line-height: 1.02; }
   .sec-title { font-size: 28px; }
   .demo-grid, .feat-grid { grid-template-columns: 1fr; }
   .foot { flex-direction: column; gap: 6px; text-align: center; }
+  /* keep the two hero CTAs together on one row */
+  .hero-actions { flex-wrap: nowrap; gap: 10px; width: 100%; justify-content: center; }
+  .hero-actions .big { flex: 1 1 0; min-width: 0; padding: 13px 12px; font-size: 14px; text-align: center; }
 }
