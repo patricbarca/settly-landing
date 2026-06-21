@@ -351,3 +351,27 @@ h1 { font-size: 58px; font-weight: 800; line-height: 1.02; }
   .hero-actions { flex-wrap: nowrap; gap: 10px; width: 100%; justify-content: center; }
   .hero-actions .big { flex: 1 1 0; min-width: 0; padding: 13px 12px; font-size: 14px; text-align: center; }
 }
+
+/* Phone status bar (decorative) + store-badge "coming soon" */
+.phone-status {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 6;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 20px 4px; pointer-events: none;
+}
+.phone-status .ps-time {
+  font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; color: #1a1c22;
+}
+.phone-status .ps-ic { display: flex; align-items: center; gap: 5px; }
+.phone-status svg { height: 11px; width: auto; fill: #1a1c22; display: block; }
+.phone-status .ps-bat { height: 12px; }
+.phone-wrap .slide { padding-top: 30px; }
+
+.store-badge { position: relative; overflow: visible; }
+.sb-soon {
+  position: absolute; top: -9px; right: -8px; z-index: 2;
+  background: var(--ink, #1a1c22); color: #fff;
+  font-size: 9px; font-weight: 800; letter-spacing: .03em; text-transform: uppercase;
+  padding: 3px 7px; border-radius: 999px; white-space: nowrap;
+  box-shadow: 0 4px 10px -4px rgba(0, 0, 0, .5);
+}
+.store-badges.on-dark .sb-soon { background: #0FA3A3; }
