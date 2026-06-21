@@ -51,6 +51,7 @@
         <nav class="nav-links">
           <a href="#features" data-es="Funciones">Features</a>
           <a href="#demo" data-es="Cómo funciona">How it works</a>
+          <a href="#pricing" data-es="Precios">Pricing</a>
           <span class="lang-toggle"><button data-lang="en">EN</button><button data-lang="es">ES</button></span>
           <a class="btn-dark" href="#cta" data-es="Probar Settly">Try Settly</a>
         </nav>
@@ -330,6 +331,52 @@
       </div>
     </section>
 
+    <!-- PRICING -->
+    <section id="pricing" class="price-sec">
+      <h2 class="sec-title" data-es="Precios sencillos">Simple pricing</h2>
+      <p class="sec-sub" data-es="Empieza gratis. Hazte Pro cuando lo necesites.">Start free. Go Pro when you need it.</p>
+
+      <div class="bill-toggle">
+        <button class="bill-opt" data-bill="monthly" data-es="Mensual">Monthly</button>
+        <button class="bill-opt on" data-bill="annual" data-es="Anual">Annual</button>
+        <span class="bill-save" data-es="Ahorra 28%">Save 28%</span>
+      </div>
+
+      <div class="price-grid">
+        <!-- Free -->
+        <article class="price-card">
+          <div class="pc-name" data-es="Gratis">Free</div>
+          <div class="pc-price"><span class="pc-amount">$0</span></div>
+          <div class="pc-sub" data-es="Para siempre, sin tarjeta">Forever, no card</div>
+          <a class="btn-ghost pc-cta" href="https://patricbarca.github.io/settly/" data-es="Empieza gratis">Start free</a>
+          <ul class="pc-feats">
+            <li><svg class="chk" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span data-es="Grupos y miembros ilimitados">Unlimited groups & members</span></li>
+            <li><svg class="chk" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span data-es="Reparto manual y saldos">Manual splitting & balances</span></li>
+            <li><svg class="chk" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span data-es="Logros y gamificación">Achievements & gamification</span></li>
+            <li><svg class="chk" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span data-es="3 escaneos con IA al mes">3 AI scans per month</span></li>
+          </ul>
+        </article>
+
+        <!-- Pro -->
+        <article class="price-card pro">
+          <span class="pc-badge" data-es="Más popular">Most popular</span>
+          <div class="pc-name">Pro</div>
+          <div class="pc-price annual"><span class="pc-amount">$5</span><span class="pc-per" data-es="/mes">/mo</span></div>
+          <div class="pc-price monthly"><span class="pc-amount">$7</span><span class="pc-per" data-es="/mes">/mo</span></div>
+          <div class="pc-sub annual" data-es="Facturado $60/año">Billed $60/year</div>
+          <div class="pc-sub monthly" data-es="Facturado mensualmente">Billed monthly</div>
+          <a class="btn-light pc-cta" href="https://patricbarca.github.io/settly/" data-es="Prueba Pro 7 días">Start 7-day trial</a>
+          <div class="pc-note" data-es="7 días gratis · se pide tarjeta · cancela cuando quieras">7-day free trial · card required · cancel anytime</div>
+          <ul class="pc-feats">
+            <li class="lead-in"><svg class="chk" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span data-es="Todo lo de Free, y además:">Everything in Free, plus:</span></li>
+            <li><svg class="chk" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span data-es="IA ilimitada: recibo + voz">Unlimited AI: receipts + voice</span></li>
+            <li><svg class="chk" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span data-es="Gastos recurrentes">Recurring expenses</span></li>
+            <li><svg class="chk" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span data-es="Stats avanzadas y export">Advanced stats & export</span></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
     <!-- CTA -->
     <section id="cta" class="cta-sec">
       <div class="cta-card">
@@ -404,6 +451,17 @@
             });
           });
           start();
+        });
+      })();
+
+      (function () {
+        var sec = document.getElementById("pricing");
+        if (!sec) return;
+        sec.querySelectorAll(".bill-opt").forEach(function (b) {
+          b.addEventListener("click", function () {
+            sec.querySelectorAll(".bill-opt").forEach(function (x) { x.classList.toggle("on", x === b); });
+            sec.classList.toggle("bill-monthly", b.getAttribute("data-bill") === "monthly");
+          });
         });
       })();
     </script>
