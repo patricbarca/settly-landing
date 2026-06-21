@@ -130,6 +130,11 @@ h1 { font-size: 58px; font-weight: 800; line-height: 1.02; }
 .ah-label { font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .12em; color: rgba(255, 255, 255, 0.65); }
 .ah-balance { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 25px; margin-top: 4px; }
 .ah-total { font-size: 11px; color: rgba(255, 255, 255, 0.75); margin-top: 5px; }
+.ah-name { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px; margin-top: 3px; line-height: 1.1; }
+.ah-pills { display: flex; gap: 6px; margin-top: 10px; }
+.ah-pill { font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+.ah-pill.owe { background: rgba(255, 90, 77, 0.22); color: #ffc2bb; }
+.ah-pill.owed { background: rgba(46, 213, 115, 0.22); color: #9bf6c9; }
 .ring { text-align: center; }
 .ring-cap { font-family: 'Space Mono', monospace; font-size: 8px; text-transform: uppercase; letter-spacing: .08em; color: rgba(255, 255, 255, 0.7); margin-top: 2px; }
 
@@ -150,6 +155,20 @@ h1 { font-size: 58px; font-weight: 800; line-height: 1.02; }
 .exp-body { flex: 1; min-width: 0; }
 .exp-t { font-weight: 700; font-size: 14px; }
 .exp-m { font-size: 11.5px; }
+.exp-chev { color: var(--muted); flex: 0 0 auto; }
+
+/* ---- stats slide ---- */
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.stat-card { background: rgba(255, 255, 255, 0.72); border: 1px solid rgba(255, 255, 255, 0.8); border-radius: 16px; padding: 11px 12px; box-shadow: 0 10px 26px -22px rgba(58, 58, 90, 0.5); }
+.stat-lbl { font-family: 'Space Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.stat-val { font-family: 'Space Mono', monospace; font-weight: 700; font-size: 18px; margin-top: 3px; }
+.stat-val.name { font-family: 'Bricolage Grotesque', sans-serif; font-size: 16px; display: flex; align-items: center; gap: 6px; }
+.bar-row { margin-top: 10px; }
+.bar-row:first-of-type { margin-top: 2px; }
+.bar-top { display: flex; align-items: center; justify-content: space-between; font-size: 12px; margin-bottom: 5px; }
+.bar-top .who { display: flex; align-items: center; gap: 6px; }
+.bar-track { height: 6px; border-radius: 999px; background: rgba(0, 0, 0, 0.08); overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 999px; }
 
 /* ---- demo storyboard ---- */
 .demo-sec { max-width: 1080px; margin: 0 auto; padding: 40px 24px; }
@@ -254,8 +273,8 @@ h1 { font-size: 58px; font-weight: 800; line-height: 1.02; }
 .mg-bal { font-family: 'Space Mono', monospace; font-weight: 700; font-size: 13px; }
 .mini-ava-row { display: flex; gap: 7px; padding: 6px 0 4px; }
 .mini-ava { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #33363e; }
-.mini-tabs { display: flex; gap: 3px; background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(255, 255, 255, 0.7); border-radius: 999px; padding: 3px; margin: 6px 0 10px; }
-.mini-tab { flex: 1; text-align: center; font-size: 11px; font-weight: 700; padding: 6px 4px; border-radius: 999px; color: var(--muted); }
+.mini-tabs { display: flex; gap: 2px; background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(255, 255, 255, 0.7); border-radius: 999px; padding: 3px; margin: 6px 0 10px; }
+.mini-tab { flex: 1; text-align: center; font-size: 9px; font-weight: 700; padding: 6px 2px; border-radius: 999px; color: var(--muted); white-space: nowrap; letter-spacing: -.01em; }
 .mini-tab.on { background: var(--ink); color: #fff; }
 .ach-prow { display: flex; align-items: center; gap: 9px; padding: 6px 0; }
 .ach-info { flex: 1; font-size: 13px; font-weight: 600; }
