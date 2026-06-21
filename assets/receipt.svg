@@ -1,0 +1,83 @@
+<svg width="380" height="580" viewBox="0 0 380 580" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="sh" x="-20%" y="-10%" width="140%" height="120%">
+      <feDropShadow dx="0" dy="14" stdDeviation="22" flood-color="#2a2a4a" flood-opacity="0.28" />
+    </filter>
+    <style>
+      .mono { font-family: 'Space Mono', 'Courier New', monospace; }
+      .h { font-family: 'Space Mono', 'Courier New', monospace; font-weight: 700; }
+    </style>
+  </defs>
+
+  <!-- papel -->
+  <rect x="40" y="20" width="300" height="540" rx="10" fill="#ffffff" filter="url(#sh)" />
+
+  <!-- cabecera -->
+  <text x="190" y="66" text-anchor="middle" class="h" font-size="22" fill="#1a1c22" letter-spacing="2">LA TRATTORIA</text>
+  <text x="190" y="86" text-anchor="middle" class="mono" font-size="11" fill="#6b6f7a">Via Roma 14 · Barcelona</text>
+  <text x="190" y="102" text-anchor="middle" class="mono" font-size="11" fill="#6b6f7a">Tel. 934 000 000</text>
+
+  <line x1="64" y1="120" x2="316" y2="120" stroke="#c8cac2" stroke-width="1.5" stroke-dasharray="3 4" />
+
+  <text x="64" y="142" class="mono" font-size="11" fill="#6b6f7a">19/06/2026  21:34</text>
+  <text x="316" y="142" text-anchor="end" class="mono" font-size="11" fill="#6b6f7a">Mesa 7 · 4 pax</text>
+
+  <line x1="64" y1="156" x2="316" y2="156" stroke="#c8cac2" stroke-width="1.5" stroke-dasharray="3 4" />
+
+  <!-- items -->
+  <g class="mono" font-size="13" fill="#1a1c22">
+    <text x="64" y="186">Pizza Margherita</text>
+    <text x="316" y="186" text-anchor="end">12,50</text>
+
+    <text x="64" y="212">Pizza Diavola</text>
+    <text x="316" y="212" text-anchor="end">14,00</text>
+
+    <text x="64" y="238">Spaghetti Carbonara</text>
+    <text x="316" y="238" text-anchor="end">13,50</text>
+
+    <text x="64" y="264">Ensalada Caprese</text>
+    <text x="316" y="264" text-anchor="end">9,00</text>
+
+    <text x="64" y="290">Vino de la casa</text>
+    <text x="316" y="290" text-anchor="end">18,00</text>
+
+    <text x="64" y="316">Tiramisú</text>
+    <text x="316" y="316" text-anchor="end">7,50</text>
+  </g>
+
+  <line x1="64" y1="338" x2="316" y2="338" stroke="#c8cac2" stroke-width="1.5" stroke-dasharray="3 4" />
+
+  <g class="mono" font-size="13" fill="#3a3d46">
+    <text x="64" y="362">Subtotal</text>
+    <text x="316" y="362" text-anchor="end">74,50</text>
+    <text x="64" y="384">IVA 10%</text>
+    <text x="316" y="384" text-anchor="end">incluido</text>
+  </g>
+
+  <rect x="64" y="402" width="252" height="40" rx="8" fill="#1a1c22" />
+  <text x="80" y="427" class="h" font-size="15" fill="#ffffff">TOTAL</text>
+  <text x="300" y="427" text-anchor="end" class="h" font-size="16" fill="#ffffff">74,50 $</text>
+
+  <line x1="64" y1="466" x2="316" y2="466" stroke="#c8cac2" stroke-width="1.5" stroke-dasharray="3 4" />
+
+  <text x="190" y="492" text-anchor="middle" class="mono" font-size="11" fill="#6b6f7a">Gracias por su visita · Grazie!</text>
+
+  <!-- código de barras decorativo -->
+  <g fill="#1a1c22">
+    <rect x="96" y="512" width="3" height="30" /><rect x="102" y="512" width="2" height="30" />
+    <rect x="107" y="512" width="4" height="30" /><rect x="114" y="512" width="2" height="30" />
+    <rect x="119" y="512" width="3" height="30" /><rect x="125" y="512" width="5" height="30" />
+    <rect x="133" y="512" width="2" height="30" /><rect x="138" y="512" width="3" height="30" />
+    <rect x="144" y="512" width="2" height="30" /><rect x="149" y="512" width="4" height="30" />
+    <rect x="156" y="512" width="3" height="30" /><rect x="162" y="512" width="2" height="30" />
+    <rect x="167" y="512" width="5" height="30" /><rect x="175" y="512" width="2" height="30" />
+    <rect x="180" y="512" width="3" height="30" /><rect x="186" y="512" width="4" height="30" />
+    <rect x="193" y="512" width="2" height="30" /><rect x="198" y="512" width="3" height="30" />
+    <rect x="204" y="512" width="5" height="30" /><rect x="212" y="512" width="2" height="30" />
+    <rect x="217" y="512" width="3" height="30" /><rect x="223" y="512" width="2" height="30" />
+    <rect x="228" y="512" width="4" height="30" /><rect x="235" y="512" width="3" height="30" />
+    <rect x="241" y="512" width="2" height="30" /><rect x="246" y="512" width="5" height="30" />
+    <rect x="254" y="512" width="2" height="30" /><rect x="259" y="512" width="3" height="30" />
+    <rect x="265" y="512" width="4" height="30" /><rect x="272" y="512" width="2" height="30" />
+  </g>
+</svg>
