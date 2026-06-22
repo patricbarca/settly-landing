@@ -125,6 +125,10 @@ h1 { font-size: 58px; font-weight: 800; line-height: 1.02; }
 }
 .ah-top { display: flex; align-items: center; justify-content: space-between; }
 .ah-brand { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 18px; }
+.ah-bell { position: relative; display: inline-flex; }
+.bell-dot { position: absolute; top: -1px; right: -1px; width: 7px; height: 7px; border-radius: 50%; background: #FF5A4D; box-shadow: 0 0 0 1.5px #241c53; }
+.pay-method { margin-top: 8px; font-size: 11px; color: #6b7280; }
+.pay-method .mono { font-family: 'Space Mono', monospace; }
 .ah-group { font-family: 'Space Mono', monospace; font-size: 10.5px; color: rgba(255, 255, 255, 0.75); }
 .ah-row { display: flex; align-items: flex-end; justify-content: space-between; margin-top: 18px; gap: 8px; }
 .ah-label { font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .12em; color: rgba(255, 255, 255, 0.65); }
