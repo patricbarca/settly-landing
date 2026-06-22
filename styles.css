@@ -379,3 +379,19 @@ h1 { font-size: 58px; font-weight: 800; line-height: 1.02; }
   box-shadow: 0 4px 10px -4px rgba(0, 0, 0, .5);
 }
 .store-badges.on-dark .sb-soon { background: #0FA3A3; }
+
+/* ---- legal pages ---- */
+.legal-wrap { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
+.legal-wrap h1 { font-size: 38px; margin-bottom: 6px; }
+.legal-wrap .updated { color: var(--muted); font-size: 13px; margin-bottom: 28px; }
+.legal-wrap h2 { font-size: 20px; margin: 28px 0 8px; }
+.legal-wrap p, .legal-wrap li { font-size: 15px; color: #3a3d45; margin-bottom: 10px; }
+.legal-wrap ul { padding-left: 20px; }
+.legal-wrap a { color: var(--indigo); text-decoration: underline; }
+.legal-back { display: inline-block; margin-bottom: 18px; color: var(--muted); font-weight: 600; }
+[data-lang-block] { display: none; }
+[data-lang-block].on { display: block; }
+
+.foot-legal { display: inline-flex; gap: 16px; }
+.foot-legal a { color: var(--muted); text-decoration: underline; }
+.foot-legal a:hover { color: var(--ink); }
