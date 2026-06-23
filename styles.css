@@ -317,6 +317,62 @@ h1 { font-size: 58px; font-weight: 800; line-height: 1.02; }
 .ach-info .muted { font-size: 10.5px; font-weight: 400; }
 .ach-ic { display: flex; gap: 4px; color: var(--teal); }
 
+/* ---- add-expense slide (AI input) ---- */
+.hh-wm { display: inline-block; }
+.add-input {
+  display: flex; align-items: flex-start; gap: 8px;
+  background: rgba(255, 255, 255, 0.72); border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 14px; padding: 11px 12px; font-size: 12.5px; line-height: 1.4; color: #33363e;
+  box-shadow: 0 10px 26px -22px rgba(58, 58, 90, 0.5);
+}
+.ai-spark { flex: 0 0 auto; line-height: 0; margin-top: 1px; }
+.add-methods { display: flex; gap: 6px; margin: 9px 0; }
+.method-chip {
+  display: inline-flex; align-items: center; gap: 5px; flex: 1; justify-content: center;
+  font-size: 10.5px; font-weight: 700; padding: 7px 6px; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(0, 0, 0, 0.07); color: #50535b;
+}
+.method-chip svg { width: 13px; height: 13px; flex: 0 0 auto; }
+.method-chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+.ai-btn {
+  width: 100%; border: none; cursor: default; border-radius: 999px; padding: 10px;
+  font: inherit; font-weight: 700; font-size: 13px; color: #fff;
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  background: linear-gradient(100deg, #5b5bf0, #0fa3a3 60%, #0ea5e9);
+  box-shadow: 0 12px 26px -14px rgba(91, 91, 240, 0.6);
+}
+.ai-res-lbl { font-family: 'Space Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin: 12px 2px 7px; }
+
+/* ---- notifications slide ---- */
+.notif-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  background: rgba(255, 255, 255, 0.72); border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 14px; padding: 10px 11px; margin-bottom: 7px;
+  box-shadow: 0 10px 26px -22px rgba(58, 58, 90, 0.5);
+}
+.notif-ic { width: 30px; height: 30px; border-radius: 50%; flex: 0 0 auto; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.05); color: #50535b; }
+.notif-tx { flex: 1; min-width: 0; font-size: 12px; line-height: 1.35; }
+.notif-time { font-size: 9.5px; color: var(--muted); margin-top: 2px; font-family: 'Space Mono', monospace; }
+
+/* ---- settle pay details ---- */
+.pay-sheet { margin-top: 9px; padding-top: 9px; border-top: 1px solid rgba(0, 0, 0, 0.06); }
+.pay-sheet-h { font-family: 'Space Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 7px; }
+.pay-line { display: flex; align-items: center; gap: 8px; font-size: 11.5px; margin-bottom: 6px; }
+.pay-k { font-weight: 700; color: #33363e; min-width: 38px; }
+.pay-line .mono { font-family: 'Space Mono', monospace; color: var(--muted); }
+.pay-copy { margin-left: auto; font-size: 10px; font-weight: 700; color: var(--teal); background: rgba(15, 163, 163, 0.12); padding: 3px 8px; border-radius: 999px; }
+
+/* ---- demo method slides ---- */
+.method-badge { display: inline-flex; align-items: center; gap: 7px; align-self: center; font-size: 12px; font-weight: 800; padding: 6px 14px; border-radius: 999px; background: var(--ink); color: #fff; margin-bottom: 4px; }
+.method-badge svg { width: 14px; height: 14px; flex: 0 0 auto; }
+.ai-chip { display: inline-flex; align-items: center; gap: 6px; align-self: center; font-size: 11px; font-weight: 700; padding: 5px 12px; border-radius: 999px; color: #fff; margin: 9px 0; background: linear-gradient(100deg, #5b5bf0, #0fa3a3 60%, #0ea5e9); }
+.ai-chip svg { flex: 0 0 auto; }
+.demo-exp { display: flex; align-items: center; gap: 10px; width: 100%; background: rgba(255, 255, 255, 0.72); border: 1px solid rgba(255, 255, 255, 0.85); border-radius: 14px; padding: 11px; box-shadow: 0 10px 26px -22px rgba(58, 58, 90, 0.5); }
+.scan-row { display: flex; align-items: center; gap: 12px; }
+.scan-row .receipt { width: 92px; flex: 0 0 auto; }
+.scan-row .list { flex: 1; min-width: 0; }
+.demo-card { min-height: 360px; }
+
 /* ---- store badges ---- */
 .store-badges { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
 .store-badge {
