@@ -9,6 +9,9 @@
 
 * { box-sizing: border-box; margin: 0; }
 html { scroll-behavior: smooth; }
+/* Deja hueco bajo la barra fija al saltar a una sección con el ancla (#demo, etc.),
+   si no, el título queda detrás del nav sticky. */
+section[id] { scroll-margin-top: 84px; }
 body {
   font-family: 'Instrument Sans', system-ui, sans-serif;
   color: var(--ink);
