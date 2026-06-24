@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SettliA — group expenses, drama-free</title>
-    <meta name="description" content="SettliA splits the group bill for you. Type it, say it or scan the receipt and AI turns it into an expense, assigning each item to each person." />
+    <title>SettliA — AI bill splitter for group expenses</title>
+    <meta name="description" content="Split bills and group expenses the easy way. Type it, say it or scan the receipt — AI turns it into an expense, assigns each item to each person and tracks who owes who. Free." />
     <link rel="canonical" href="https://settlia.app/" />
     <meta name="theme-color" content="#241c53" />
 
@@ -29,6 +29,76 @@
     <meta name="twitter:title" content="SettliA — group expenses, drama-free" />
     <meta name="twitter:description" content="Type it, say it or scan the receipt — AI splits the group bill and assigns each item to each person." />
     <meta name="twitter:image" content="https://settlia.app/assets/og.png" />
+
+    <!-- Datos estructurados (JSON-LD) para SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "SettliA",
+      "url": "https://settlia.app/"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "SettliA",
+      "url": "https://settlia.app/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web, iOS, Android",
+      "description": "AI bill splitter for group expenses. Type, say or scan the receipt and AI splits the bill, assigns each item to each person and tracks who owes who.",
+      "inLanguage": ["en", "es"],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "AUD"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is SettliA free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The free plan includes up to 3 groups, unlimited members, splitting and balances, and 3 AI uses per month of each type (scan, voice and text). Pro adds unlimited groups, unlimited AI, recurring expenses and advanced stats." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do my friends need the app?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each member uses SettliA with their own free account, so balances stay in sync for everyone. You invite them with a link; it takes seconds to join." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the AI work? Is it reliable?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You type, speak, or photograph the receipt and the AI builds the expense. It always shows what it assumed and you confirm before saving — you have the final word." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does SettliA handle the money?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. SettliA works out who owes who and shows each person's payment details; you pay with your own banking app. We don't process or hold money." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work for a flatshare?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Create the group as Household: continuous accounts, recurring expenses (rent, internet) and reminders to settle when it's time." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data private and secure?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes: encrypted in transit, row-level security (you only see your own groups), and you can delete your account anytime." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I install it on my phone?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. SettliA is a PWA: open it in your browser and Add to home screen. App Store and Google Play apps are on the way." }
+        }
+      ]
+    }
+    </script>
 
     <link rel="stylesheet" href="styles.css" />
   </head>
