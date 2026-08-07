@@ -42,9 +42,14 @@
         padding: 17px 20px; border-radius: 18px; text-decoration: none; font-weight: 700; font-size: 17px;
         background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); color: #fff;
         transition: transform .12s ease, background .12s ease; }
-      .link-btn:hover { transform: translateY(-2px); background: rgba(255,255,255,.12); }
       .link-btn.primary { background: linear-gradient(135deg, #5B5BF0, #0FA3A3); border-color: transparent; }
-      .link-btn.primary:hover { background: linear-gradient(135deg, #6a6af5, #14b8b8); }
+      /* Hover SOLO en dispositivos con puntero (ratón). En táctil, un :hover
+         "pegajoso" se come el primer toque y obliga a pulsar dos veces. */
+      @media (hover: hover) {
+        .link-btn:hover { transform: translateY(-2px); background: rgba(255,255,255,.12); }
+        .link-btn.primary:hover { background: linear-gradient(135deg, #6a6af5, #14b8b8); }
+      }
+      .link-btn:active { transform: translateY(0); opacity: .9; }
       .link-btn .ic { width: 34px; height: 34px; flex: 0 0 auto; display: flex; align-items: center; justify-content: center; }
       .link-btn .ic svg { width: 26px; height: 26px; fill: currentColor; }
       .link-btn .tx { text-align: left; line-height: 1.15; }
