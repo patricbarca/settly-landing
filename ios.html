@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Get Settlia on the App Store</title>
+    <meta name="description" content="Download Settlia on the App Store." />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <style>
+      *{margin:0;padding:0;box-sizing:border-box}
+      body{min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+        background:linear-gradient(160deg,#241C53,#141238 45%,#0D1B2A);color:#fff;
+        display:flex;flex-direction:column;align-items:center;justify-content:center;
+        text-align:center;padding:40px 24px;gap:8px}
+      .icon{width:104px;height:104px;border-radius:26px;margin-bottom:18px;
+        background:linear-gradient(145deg,#0f2d54,#0a1a2e,#0d2340);
+        box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 16px 40px rgba(0,0,0,.5);
+        border:1px solid rgba(255,255,255,.10);display:flex;align-items:center;justify-content:center}
+      .icon img{width:60px;height:auto;display:block}
+      h1{font-size:26px;font-weight:800;letter-spacing:-.5px}
+      p{color:#9fb2d8;font-size:15px;max-width:320px;margin-top:4px;line-height:1.45}
+      .btn{margin-top:24px;display:inline-flex;align-items:center;gap:14px;text-decoration:none;
+        background:#000;border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:16px 26px;color:#fff}
+      .btn svg{width:30px;height:30px;fill:#fff}
+      .btn .t small{display:block;font-size:12px;color:#cfd6e6;text-align:left;line-height:1.1}
+      .btn .t b{display:block;font-size:22px;font-weight:700;text-align:left;line-height:1.1}
+      .hint{margin-top:26px;font-size:13px;color:#7a90bb;max-width:320px;line-height:1.5}
+      .hint b{color:#9fb2d8}
+    </style>
+  </head>
+  <body>
+    <div class="icon"><img src="assets/logo-s.png" alt="Settlia" /></div>
+    <h1 data-es="Abriendo la App Store…">Opening the App Store…</h1>
+    <p data-es="Si no se abre sola, toca el botón de abajo.">If it doesn't open automatically, tap the button below.</p>
+
+    <a class="btn" id="store" href="itms-apps://apps.apple.com/app/id6787267468">
+      <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+      <span class="t"><small data-es="Descárgala en">Download on the</small><b>App Store</b></span>
+    </a>
+
+    <div class="hint" data-es-html="¿Sigue sin abrir? Toca <b>···</b> arriba a la derecha y elige <b>«Abrir en el navegador»</b>.">Still not opening? Tap <b>···</b> at the top right and choose <b>“Open in browser”</b>.</div>
+
+    <script>
+      (function () {
+        var SCHEME = "itms-apps://apps.apple.com/app/id6787267468";
+        var HTTPS = "https://apps.apple.com/app/settlia/id6787267468";
+
+        // ES/EN según navegador
+        var es = (navigator.language || "en").toLowerCase().indexOf("es") === 0;
+        if (es) {
+          document.documentElement.lang = "es";
+          document.querySelectorAll("[data-es]").forEach(function (el) { el.textContent = el.getAttribute("data-es"); });
+          document.querySelectorAll("[data-es-html]").forEach(function (el) { el.innerHTML = el.getAttribute("data-es-html"); });
+        }
+
+        var isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        var store = document.getElementById("store");
+        // En iOS usamos el esquema nativo (abre la app App Store aunque el
+        // navegador in-app no renderice la página web). En otros → https normal.
+        store.setAttribute("href", isiOS ? SCHEME : HTTPS);
+
+        // Intento automático de abrir la App Store nativa al cargar.
+        try { window.location.href = isiOS ? SCHEME : HTTPS; } catch (e) {}
+      })();
+    </script>
+  </body>
+</html>
