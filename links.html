@@ -23,7 +23,7 @@
         display: flex; flex-direction: column; align-items: center; justify-content: center;
         padding: 56px 22px; text-align: center; color: #fff; position: relative; overflow: hidden;
       }
-      .links-page .glow { position: absolute; border-radius: 50%; filter: blur(10px); }
+      .links-page .glow { position: absolute; border-radius: 50%; filter: blur(10px); pointer-events: none; }
       .links-page .g1 { width: 60vw; height: 60vw; max-width: 460px; max-height: 460px;
         background: radial-gradient(circle, rgba(15,163,163,.25), transparent 65%); top: -12%; right: -18%; }
       .links-page .g2 { width: 62vw; height: 62vw; max-width: 480px; max-height: 480px;
@@ -108,6 +108,16 @@
           });
         }
         apply(getLang());
+
+        // Algunos navegadores dentro de apps (Instagram/Facebook) no siguen la
+        // navegación por defecto de un <a> con un toque simple (sí con long-press
+        // → "Open Link"). Forzamos la navegación por JS al tocar, que sí funciona.
+        document.querySelectorAll("a.link-btn").forEach(function (a) {
+          a.addEventListener("click", function () {
+            var href = a.getAttribute("href");
+            if (href) window.location.href = href;
+          });
+        });
       })();
     </script>
   </body>
