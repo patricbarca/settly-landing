@@ -269,6 +269,29 @@
               </div>
             </div>
 
+            <!-- C2 · Scan a receipt → AI itemized split -->
+            <div class="slide">
+              <div class="slim-head" data-es="Escanea el recibo">Scan the receipt</div>
+              <div style="display:flex;gap:10px;align-items:flex-start">
+                <div style="flex:0 0 92px;background:#fff;border-radius:10px;box-shadow:0 6px 16px rgba(0,0,0,.14);padding:10px 9px;font-family:'Space Mono',monospace;font-size:8px;color:#333;line-height:1.75">
+                  <div style="text-align:center;font-weight:700;letter-spacing:.5px">TRATTORIA</div>
+                  <div style="border-top:1px dashed #ccc;margin:5px 0"></div>
+                  <div style="display:flex;justify-content:space-between"><span>Pizza</span><span>18,00</span></div>
+                  <div style="display:flex;justify-content:space-between"><span>Pasta</span><span>16,50</span></div>
+                  <div style="display:flex;justify-content:space-between"><span>Wine</span><span>24,00</span></div>
+                  <div style="display:flex;justify-content:space-between"><span>Water</span><span>4,00</span></div>
+                  <div style="border-top:1px dashed #ccc;margin:5px 0"></div>
+                  <div style="display:flex;justify-content:space-between;font-weight:700"><span>TOTAL</span><span>74,50</span></div>
+                </div>
+                <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:6px">
+                  <div style="display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;color:#5B5BF0"><svg width="12" height="12" viewBox="0 0 24 24" fill="#5B5BF0"><path d="M12 2l1.7 4.8L18.5 8.5 13.7 10.2 12 15l-1.7-4.8L5.5 8.5 10.3 6.8z"/></svg><span data-es="La IA lo desglosó">AI itemized it</span></div>
+                  <div class="card soft" style="padding:8px 9px;display:flex;align-items:center;gap:7px"><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:11px">Pizza</div><div class="muted" style="font-size:9px" data-es="Siena, Alexa">Siena, Alexa</div></div><span class="amount" style="font-size:11px">18,00&nbsp;$</span></div>
+                  <div class="card soft" style="padding:8px 9px;display:flex;align-items:center;gap:7px"><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:11px">Wine</div><div class="muted" style="font-size:9px" data-es="entre los 4">split 4 ways</div></div><span class="amount" style="font-size:11px">24,00&nbsp;$</span></div>
+                  <div style="font-size:9px;color:#0A8B5E;font-weight:700;text-align:center;margin-top:2px" data-es="Asigna cada plato a quien lo pidió">Assign each item to who ordered it</div>
+                </div>
+              </div>
+            </div>
+
             <!-- D · Group: Balances + settle up with payment details -->
             <div class="slide">
               <div class="slim-head" data-es="Cena en Roma">Rome dinner</div>
@@ -281,6 +304,7 @@
               <div class="mini-tabs"><span class="mini-tab" data-es="Gastos">Expenses</span><span class="mini-tab on" data-es="Saldos">Balances</span><span class="mini-tab" data-es="Estadísticas">Stats</span><span class="mini-tab" data-es="Logros">Achievements</span></div>
               <div class="card soft">
                 <div class="card-head" data-es="Para saldar">To settle up</div>
+                <div class="muted" style="font-size:9px;margin:-3px 0 7px;font-weight:600" data-es="Deudas simplificadas · mínimo de pagos">Simplified debts · fewest payments</div>
                 <div class="settle-row"><span class="ava" style="background:#FF5A4D">P</span><b>Patrick</b><span class="muted" data-es="paga a">pays</span><span class="ava" style="background:#0FA3A3">S</span><b>Siena</b><span class="amount">18,75&nbsp;$</span></div>
                 <div class="pay-sheet">
                   <div class="pay-sheet-h" data-es="Datos de pago al tocar «Pagar»">Payment details on “Pay”</div>
@@ -353,9 +377,10 @@
           <button class="dot on" data-i="0" aria-label="Home"></button>
           <button class="dot" data-i="1" aria-label="Expenses"></button>
           <button class="dot" data-i="2" aria-label="Add expense"></button>
-          <button class="dot" data-i="3" aria-label="Balances"></button>
-          <button class="dot" data-i="4" aria-label="Notifications"></button>
-          <button class="dot" data-i="5" aria-label="Stats"></button>
+          <button class="dot" data-i="3" aria-label="Scan receipt"></button>
+          <button class="dot" data-i="4" aria-label="Balances"></button>
+          <button class="dot" data-i="5" aria-label="Notifications"></button>
+          <button class="dot" data-i="6" aria-label="Stats"></button>
         </div>
       </div>
     </section>
