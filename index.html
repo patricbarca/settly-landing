@@ -178,6 +178,11 @@
                 <img src="assets/logo-s.png" width="24" height="24" alt="Settlia" style="display:block;border-radius:5px;background:linear-gradient(145deg,#0f2d54,#0a1a2e);box-shadow:inset 0 1px 0 rgba(255,255,255,0.18),0 2px 6px rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.10);padding:3px" />
                 <span class="hh-wm">Settlia</span>
               </div>
+              <div style="display:flex;gap:6px;margin:8px 2px 4px">
+                <span style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;padding:3px 8px;border-radius:999px;background:rgba(0,0,0,.05);color:#1a1c22">T&nbsp;687,00&nbsp;$</span>
+                <span style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;padding:3px 8px;border-radius:999px;background:rgba(209,68,68,.12);color:#D14444">↓&nbsp;24,30&nbsp;$</span>
+                <span style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;padding:3px 8px;border-radius:999px;background:rgba(10,139,94,.12);color:#0A8B5E">↑&nbsp;18,75&nbsp;$</span>
+              </div>
               <div class="sub-lbl" data-es="Tus grupos">Your groups</div>
               <div class="mini-group">
                 <svg width="38" height="38" viewBox="0 0 38 38"><g transform="translate(19,19) rotate(-90)"><circle r="15" fill="none" stroke="rgba(0,0,0,.1)" stroke-width="5"/><circle r="15" fill="none" stroke="#0FA3A3" stroke-width="5" stroke-linecap="round" stroke-dasharray="75 95"/></g><text x="19" y="20" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="800" fill="#1a1c22" font-family="'Space Mono',monospace">80</text></svg>
@@ -302,16 +307,21 @@
                 <span class="mini-ava" style="background:#E8920C22;box-shadow:0 0 0 2px #0A8B5E">J</span>
               </div>
               <div class="mini-tabs"><span class="mini-tab" data-es="Gastos">Expenses</span><span class="mini-tab on" data-es="Saldos">Balances</span><span class="mini-tab" data-es="Estadísticas">Stats</span><span class="mini-tab" data-es="Logros">Achievements</span></div>
+              <div class="card soft" style="margin-bottom:8px">
+                <div class="card-head" data-es="Saldos del grupo">Group balances</div>
+                <div style="display:flex;align-items:center;gap:7px;padding:2px 0"><span class="ava" style="background:#0FA3A3">S</span><span style="font-size:12px;min-width:0"><b>Siena</b></span><span class="amount" style="color:#0A8B5E">+18,75&nbsp;$</span><span style="width:17px;height:17px;border-radius:50%;border:1px solid rgba(0,0,0,.16);display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);flex:0 0 auto">?</span></div>
+                <div style="display:flex;align-items:center;gap:7px;padding:2px 0"><span class="ava" style="background:#FF5A4D">P</span><span style="font-size:12px;min-width:0"><b>Patrick</b></span><span class="amount" style="color:#D14444">−18,75&nbsp;$</span><span style="width:17px;height:17px;border-radius:50%;border:1px solid rgba(0,0,0,.16);display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);flex:0 0 auto">?</span></div>
+                <div style="display:flex;align-items:center;gap:7px;padding:2px 0"><span class="ava" style="background:#5B5BF0">A</span><span style="font-size:12px;min-width:0"><b>Alexa</b></span><span class="amount muted" data-es="al día">settled</span><span style="width:17px;height:17px;border-radius:50%;border:1px solid rgba(0,0,0,.16);display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);flex:0 0 auto">?</span></div>
+              </div>
               <div class="card soft">
                 <div class="card-head" data-es="Para saldar">To settle up</div>
                 <div class="muted" style="font-size:9px;margin:-3px 0 7px;font-weight:600" data-es="Deudas simplificadas · mínimo de pagos">Simplified debts · fewest payments</div>
-                <div class="settle-row"><span class="ava" style="background:#FF5A4D">P</span><b>Patrick</b><span class="muted" data-es="paga a">pays</span><span class="ava" style="background:#0FA3A3">S</span><b>Siena</b><span class="amount">18,75&nbsp;$</span></div>
+                <div class="settle-row"><span class="ava" style="background:#FF5A4D">P</span><b>Patrick</b><span class="muted" data-es="paga a">pays</span><span class="ava" style="background:#0FA3A3">S</span><b>Siena</b><span class="amount">18,75&nbsp;$</span><span style="width:17px;height:17px;border-radius:50%;border:1px solid rgba(0,0,0,.16);display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);flex:0 0 auto;margin-left:6px">?</span></div>
                 <div class="pay-sheet">
                   <div class="pay-sheet-h" data-es="Datos de pago al tocar «Pagar»">Payment details on “Pay”</div>
                   <div class="pay-line"><span class="pay-k">PayID</span><span class="mono">siena@bank.com</span><span class="pay-copy" data-es="Copiar">Copy</span></div>
-                  <div class="pay-line"><span class="pay-k" data-es="Banco">Bank</span><span class="mono">062-000 · 1234 5678</span><span class="pay-copy" data-es="Copiar">Copy</span></div>
                 </div>
-                <div class="pills"><span class="pill teal" data-es="Pagar">Pay</span><span class="pill" data-es="Marcar pagado">Mark paid</span></div>
+                <div class="pills"><span class="pill teal" data-es="Pagar">Pay</span><span class="pill" data-es="Método">Method</span></div>
               </div>
             </div>
 
