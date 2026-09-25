@@ -260,10 +260,19 @@ h1 { font-size: 58px; font-weight: 800; line-height: 1.02; }
 .chk { color: var(--teal); flex: 0 0 auto; margin-top: 1px; }
 .price-card.pro .chk { color: #7cf5ee; }
 /* billing visibility (annual default) */
-.pc-price.monthly, .pc-sub.monthly { display: none; }
-.price-sec.bill-monthly .pc-price.annual, .price-sec.bill-monthly .pc-sub.annual { display: none; }
+/* "Menos de $X al día": anclaje de precio. Deliberadamente MÁS PEQUEÑO que el
+   importe real de arriba — el precio que se cobra debe seguir siendo lo
+   prominente (requisito de consumo UE y de las reglas de Apple). */
+.pc-daily { font-size: 12.5px; font-weight: 600; margin-top: 8px;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; border-radius: 999px;
+  background: rgba(15,163,163,.12); color: #0B7E7E; }
+.price-card.pro .pc-daily { background: rgba(255,255,255,.16); color: #fff; }
+.pc-price.monthly, .pc-sub.monthly, .pc-daily.monthly { display: none; }
+.price-sec.bill-monthly .pc-price.annual, .price-sec.bill-monthly .pc-sub.annual, .price-sec.bill-monthly .pc-daily.annual { display: none; }
 .price-sec.bill-monthly .pc-price.monthly { display: flex; }
 .price-sec.bill-monthly .pc-sub.monthly { display: block; }
+.price-sec.bill-monthly .pc-daily.monthly { display: inline-flex; }
 
 /* ---- footer ---- */
 .foot { max-width: 1080px; margin: 0 auto; padding: 24px; display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); border-top: 1px solid rgba(0, 0, 0, 0.06); }
