@@ -595,3 +595,54 @@ h1 { font-size: 58px; font-weight: 800; line-height: 1.02; }
   .shots .slide { transition: none; }
   .shots .slide.on img { animation: none; }
 }
+
+/* ============================================================
+   STORYBOARD: los dos flujos reales (escanear ticket / escribirlo)
+   Mismo principio que el hero: capturas de la app que se desplazan dentro
+   del marco, con la barra inferior fija. Antes esta seccion era HTML
+   dibujado a mano que fingia justo estas pantallas.
+   ============================================================ */
+.flows { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; margin-top: 34px; }
+.flow { display: flex; flex-direction: column; align-items: center; width: 300px; max-width: 100%; }
+.flow-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 14px; letter-spacing: -.02em; }
+
+.flow-phone {
+  position: relative; width: 260px; border-radius: 26px; overflow: hidden;
+  background: #0b0c10; border: 1px solid rgba(0, 0, 0, 0.14);
+  box-shadow: 0 26px 50px -28px rgba(40, 40, 70, 0.6);
+}
+.flow-stage { position: relative; height: 480px; overflow: hidden; }
+.flow-stage .slide {
+  position: absolute; inset: 0; padding: 0; display: block;
+  opacity: 0; transform: none; transition: opacity .45s ease;
+}
+.flow-stage .slide.on { opacity: 1; }
+.flow-stage .slide img { width: 100%; height: auto; display: block; }
+/* 100% = alto de la imagen, 480px = el marco: el recorrido sale solo. */
+@keyframes flow-scroll {
+  from { transform: translateY(0); }
+  to   { transform: translateY(calc(480px - 100%)); }
+}
+.flow-stage .slide.on img { animation: flow-scroll var(--scroll-dur, 3s) cubic-bezier(.45,0,.55,1) 1.2s both; }
+.flow-nav { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; width: 100%; height: auto; display: block; pointer-events: none; }
+/* La imagen de la slide se anima; la barra NO debe moverse con ella. */
+.flow-stage .slide.on .flow-nav { animation: none; }
+
+.flow-caps { position: relative; width: 100%; margin-top: 14px; min-height: 52px; }
+.flow-caps .cap {
+  position: absolute; inset: 0; display: flex; align-items: flex-start; gap: 9px;
+  font-size: 13.5px; color: #44474f; opacity: 0; transition: opacity .35s ease;
+}
+.flow-caps .cap.on { opacity: 1; }
+.flow-caps .cap b {
+  background: var(--ink); color: #fff; width: 22px; height: 22px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Space Mono', monospace; font-size: 11px; flex: 0 0 auto;
+}
+.flow .dots { margin-top: 6px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-stage .slide, .flow-caps .cap { transition: none; }
+  .flow-stage .slide.on img { animation: none; }
+}
+@media (max-width: 720px) { .flows { gap: 34px; } }

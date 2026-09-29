@@ -75,6 +75,37 @@ La app tiene `html, body, #root { height: 100% }` con scroll interno. Un
 claro**. El script mide el alto real con el viewport normal, **redimensiona el
 viewport a esa altura exacta** y captura de una sola pintura.
 
+
+## Los dos flujos de la storyboard (`assets/flow/`)
+
+`capture-flows.mjs` graba los dos recorridos completos que enseña la sección
+"De la cuenta al reparto": **escanear un ticket** (foto → la IA lo desglosa →
+marcar quién consumió qué → guardado con la parte de cada uno) y **escribirlo
+en lenguaje normal** (frase → la IA la interpreta → guardado).
+
+**La IA se intercepta EN RED, no parcheando la app.** El script hace
+`page.route()` sobre `**/functions/v1/scan-receipt` y `**/functions/v1/parse-expense`
+y devuelve respuestas de demo. Así el camino de código es el de producción
+—consentimiento de IA, compresión de la foto, editor por ítems, cálculo del
+reparto— y sólo se sustituye lo que no podemos llamar de verdad. La respuesta
+del parser se **construye a partir de los miembros que manda la propia
+petición**, porque los ids del modo invitado son distintos en cada arranque.
+
+Detalles que importan:
+
+- El ticket de la foto lo genera `demo-receipt.html` (un restaurante inventado
+  de Lisboa). **Nunca usar un ticket real.**
+- La respuesta del scan lleva un **retardo de 2,5 s** a propósito: sin él no da
+  tiempo a capturar el estado *"Reading the receipt…"*, que es el mejor primer
+  fotograma porque enseña la foto.
+- El contenedor de cada ítem se localiza por el **valor** de su input y se le
+  marca con un `data-attr` temporal: React pone el valor como propiedad, no
+  como atributo, así que un selector CSS no lo encuentra.
+- `localStorage['settly.aiConsent'] = '1'` evita el modal de consentimiento,
+  que sólo sale la primera vez.
+- En las slides con un **modal abierto** NO se superpone la barra inferior: la
+  app oscurece toda la pantalla, barra incluida.
+
 ## Reglas que no se pueden saltar
 
 - **Cero datos reales.** Nombres inventados, sin fotos de personas y sin
