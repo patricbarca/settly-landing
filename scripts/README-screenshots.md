@@ -47,6 +47,34 @@ que la app no usa). Regenerar es más barato que mantener la copia.
 
 5. Revisar las imágenes y **revertir los parches del paso 1 y 2**.
 
+
+## Cómo funciona la animación
+
+Cada captura es la **pantalla entera** de la app (no un recorte), y se desplaza
+verticalmente dentro del marco como si alguien hiciera scroll.
+
+- La **barra inferior se captura aparte** (`nav.webp`) y se fija en el marco.
+  En la app es `position: fixed`; si subiera con el contenido, la animación
+  estaría mintiendo sobre cómo se comporta.
+- El recorrido lo calcula el CSS solo: `translateY(calc(560px - 100%))`, donde
+  `100%` es el alto de la propia imagen y `560px` el alto del marco. Así vale
+  para cualquier captura sin tocar nada.
+- La **duración va por slide** (`--scroll-dur`) y se calcula a **velocidad
+  constante** (~120 px/s) al escribir el HTML, para que una pantalla larga no
+  pase volando ni una corta se arrastre. El tiempo que se queda cada slide
+  (`data-ms`) = duración + 1.1 s de pausa arriba y abajo.
+- Con `prefers-reduced-motion: reduce` la animación **se desactiva**.
+
+Si cambias una captura, recalcula `--scroll-dur` y `data-ms` a partir del alto
+nuevo, o el ritmo se descuadra.
+
+## Por qué NO se usa `fullPage: true`
+
+La app tiene `html, body, #root { height: 100% }` con scroll interno. Un
+`fullPage` sale con **una banda vacía en medio y la mitad de abajo en tema
+claro**. El script mide el alto real con el viewport normal, **redimensiona el
+viewport a esa altura exacta** y captura de una sola pintura.
+
 ## Reglas que no se pueden saltar
 
 - **Cero datos reales.** Nombres inventados, sin fotos de personas y sin
@@ -56,4 +84,4 @@ que la app no usa). Regenerar es más barato que mantener la copia.
   sería mentir sobre la app.
 - Idioma **inglés** y tema **oscuro**, para que casen entre ellas.
 - Si se añade o quita una captura, actualizar **los `dot` del slideshow** en
-  `index.html` (hay uno por slide).
+  `index.html` (hay uno por slide) y recalcular `--scroll-dur`/`data-ms`.

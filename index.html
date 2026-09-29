@@ -176,40 +176,31 @@
               </span>
             </div>
             <div class="shot-stage">
-              <div class="slide on">
-                <img src="assets/app/01-home.webp" width="640" height="1385" loading="eager" fetchpriority="high" decoding="async"
-                     alt="Your groups in Settlia, each with its balance" data-es-alt="Tus grupos en Settlia, cada uno con su saldo" />
+              <div class="slide on" style="--scroll-dur:1.6s" data-ms="3800">
+                <img src="assets/app/01-home.webp" width="640" height="1739" loading="eager" fetchpriority="high" decoding="async"
+                     alt="Your groups, each with its own balance" data-es-alt="Tus grupos, cada uno con su saldo" />
               </div>
-              <div class="slide">
-                <img src="assets/app/02-expenses.webp" width="640" height="1385" loading="lazy" decoding="async"
-                     alt="A trip group: total, settle score and the AI add box" data-es-alt="Un grupo de viaje: total, settle score y la caja de IA" />
+              <div class="slide" style="--scroll-dur:2.7s" data-ms="4900">
+                <img src="assets/app/02-expenses.webp" width="640" height="2051" loading="lazy" decoding="async"
+                     alt="A trip group and its expenses, added by AI" data-es-alt="Un grupo de viaje y sus gastos, anadidos con IA" />
               </div>
-              <div class="slide">
-                <img src="assets/app/03-expense-list.webp" width="640" height="1385" loading="lazy" decoding="async"
-                     alt="The group's expense list with who paid" data-es-alt="La lista de gastos del grupo con quien pago" />
+              <div class="slide" style="--scroll-dur:5.8s" data-ms="8000">
+                <img src="assets/app/03-balances.webp" width="640" height="2913" loading="lazy" decoding="async"
+                     alt="Balances and who pays whom to settle up" data-es-alt="Saldos y quien paga a quien para saldar" />
               </div>
-              <div class="slide">
-                <img src="assets/app/04-balances.webp" width="640" height="1385" loading="lazy" decoding="async"
-                     alt="Group balances: what each person paid and their net" data-es-alt="Saldos del grupo: lo que puso cada uno y su neto" />
+              <div class="slide" style="--scroll-dur:6.9s" data-ms="9100">
+                <img src="assets/app/04-stats.webp" width="640" height="3231" loading="lazy" decoding="async"
+                     alt="Group stats: by category, by week, by person" data-es-alt="Estadisticas: por categoria, por semana y por persona" />
               </div>
-              <div class="slide">
-                <img src="assets/app/05-settle-up.webp" width="640" height="1385" loading="lazy" decoding="async"
-                     alt="Settle up: who pays whom, with the payment method" data-es-alt="Para saldar: quien paga a quien, con el metodo de pago" />
-              </div>
-              <div class="slide">
-                <img src="assets/app/06-stats.webp" width="640" height="1385" loading="lazy" decoding="async"
-                     alt="Group stats: total, per person and paid by person" data-es-alt="Estadisticas del grupo: total, por persona y quien pago" />
-              </div>
+              <img class="shot-nav" src="assets/app/nav.webp" width="640" height="102" alt="" aria-hidden="true" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
         <div class="dots">
           <button class="dot on" data-i="0" aria-label="Groups"></button>
-          <button class="dot" data-i="1" aria-label="Group"></button>
-          <button class="dot" data-i="2" aria-label="Expenses"></button>
-          <button class="dot" data-i="3" aria-label="Balances"></button>
-          <button class="dot" data-i="4" aria-label="Settle up"></button>
-          <button class="dot" data-i="5" aria-label="Stats"></button>
+          <button class="dot" data-i="1" aria-label="Expenses"></button>
+          <button class="dot" data-i="2" aria-label="Balances"></button>
+          <button class="dot" data-i="3" aria-label="Stats"></button>
         </div>
       </div>
     </section>
@@ -544,11 +535,15 @@
             slides.forEach(function (s, k) { s.classList.toggle("on", k === n); });
             dots.forEach(function (d, k) { d.classList.toggle("on", k === n); });
           }
-          function next() { show((i + 1) % slides.length); }
-          function start() { timer = setInterval(next, 2800); }
+          function next() { show((i + 1) % slides.length); start(); }
+          // Cada slide dura lo suyo (data-ms): las capturas con scroll animado
+          // necesitan tiempo proporcional a lo que recorren. Sin data-ms se
+          // mantiene el ritmo de siempre.
+          function hold(n) { return +slides[n].getAttribute("data-ms") || 2800; }
+          function start() { clearTimeout(timer); timer = setTimeout(next, hold(i)); }
           dots.forEach(function (d) {
             d.addEventListener("click", function () {
-              clearInterval(timer);
+              clearTimeout(timer);
               show(+d.getAttribute("data-i"));
               start();
             });
