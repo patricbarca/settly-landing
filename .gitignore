@@ -6,3 +6,6 @@ dist-ssr
 *.local
 .DS_Store
 *.log
+
+# capturas intermedias del generador de screenshots
+.screenshots/

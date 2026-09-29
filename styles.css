@@ -547,132 +547,40 @@ h1 { font-size: 58px; font-weight: 800; line-height: 1.02; }
   .blog-grid { grid-template-columns: 1fr; }
 }
 
-/* ============================================================
-   MOCKUP DEL MÓVIL — modo oscuro + Baloo 2
-   ------------------------------------------------------------
-   La app NO usa Bricolage/Instrument Sans/Space Mono: `src/index.css`
-   pone 'Baloo 2' en el cuerpo, en .font-display Y en .font-mono, con la
-   fuente auto-hospedada en `src/fonts.css`. Y los usuarios la ven casi
-   siempre en oscuro. Todo lo de aquí abajo está acotado a `.phone` para
-   que la landing conserve su propia tipografía clara.
-   Tokens copiados de [data-theme="dark"] en src/index.css.
-   ============================================================ */
-.phone {
-  --ink: #e9eaee;
-  --muted: #9aa0ac;
-  --line: rgba(255, 255, 255, 0.1);
-  --card: rgba(255, 255, 255, 0.05);
-  --card-border: rgba(255, 255, 255, 0.12);
-  --pill-bg: #e9eaee;
-  --pill-fg: #15171c;
-  color: var(--ink);
-}
-/* Baloo 2 para TODO lo que hay dentro del móvil, incluidos los importes:
-   en la app .font-mono tambien es Baloo 2, no hay monoespaciada. */
-.phone,
-.phone .mono,
-.phone .amount,
-.phone .mg-name,
-.phone .mg-meta,
-.phone .slim-head,
-.phone .ah-brand,
-.phone .ah-name,
-.phone .ah-label,
-.phone .ah-pill,
-.phone .ring-cap,
-.phone .card-head,
-.phone .valid-head,
-.phone .stat-lbl,
-.phone .stat-val,
-.phone .pay-sheet-h,
-.phone .groups-h,
-.phone .overall-lbl,
-.phone .mg-bal,
-.phone text {
-  font-family: 'Baloo 2', system-ui, sans-serif !important;
-}
-/* Baloo 2 es más ancha y alta que Space Mono: sin esto las etiquetas
-   en versalitas se parten de línea. */
-.phone .card-head,
-.phone .valid-head,
-.phone .stat-lbl,
-.phone .pay-sheet-h,
-.phone .ah-label,
-.phone .ring-cap { letter-spacing: .04em; }
-
+/* Lo unico que sobrevive del bloque del mockup: el marco del movil sigue
+   siendo oscuro por dentro para que case con las capturas. */
+.phone { color: #e9eaee; }
 .phone .phone-screen { background: linear-gradient(160deg, #0d0f14 0%, #12141b 52%, #17131d 100%); }
-.phone .phone-status { color: var(--ink); }
-.phone .phone-status svg { fill: var(--ink); }
-.phone .ps-bat rect[stroke] { stroke: rgba(255,255,255,.5); }
 
-.phone .card,
-.phone .card.soft,
-.phone .mini-group,
-.phone .stat-card,
-.phone .notif-item,
-.phone .add-input,
-.phone .method-chip,
-.phone .mini-tab,
-.phone .pill {
-  background: var(--card);
-  border-color: var(--card-border);
-  color: var(--ink);
+/* ============================================================
+   CAPTURAS REALES en el movil del hero
+   El mockup dibujado a mano se sustituyo por screenshots generados desde la
+   app (modo oscuro, ingles, datos de demo). Las reglas .phone de arriba ya no
+   pintan nada del contenido: solo el marco, la barra de estado y el fundido.
+   ============================================================ */
+.phone-screen.shots {
+  padding: 0;
+  gap: 0;
+  display: flex;
+  flex-direction: column;
+  /* 640x1385 de la captura, a 276px de ancho utiles -> 597px de alto */
+  min-height: 0;
+  background: #0b0c10;
 }
-.phone .mini-tab.on,
-.phone .method-chip.on { background: var(--pill-bg); color: var(--pill-fg); border-color: var(--pill-bg); }
-.phone .pill.teal { background: var(--teal); color: #fff; border-color: var(--teal); }
-.phone .bar-track { background: rgba(255, 255, 255, 0.1); }
-.phone .pay-sheet,
-.phone .valid-ok { border-top-color: var(--line); }
-.phone .exp-ic,
-.phone .notif-ic { background: rgba(255, 255, 255, 0.08); }
-.phone .exp-ic svg { stroke: var(--ink); }
-.phone .mg-ava { border: 1px solid rgba(255,255,255,.1); }
-
-/* --- Piezas que faltaban del chrome real de la app --- */
-/* Cabecera del grupo: va FUERA del hero (logo, atras y 4 botones redondos). */
-.ap-head { display: flex; align-items: center; gap: 6px; padding: 0 0 4px; }
-.ap-head .sp { margin-left: auto; display: flex; gap: 5px; }
-.ap-ico { width: 24px; height: 24px; border-radius: 50%; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; }
-.ap-ico svg { width: 12px; height: 12px; stroke: var(--muted); fill: none; stroke-width: 1.8; }
-.ap-logo { width: 24px; height: 24px; border-radius: 6px; flex: 0 0 auto; }
-/* Linea "Simplified (i)" bajo las pills del hero. */
-.ah-mode { display: flex; align-items: center; gap: 4px; font-size: 9.5px; color: rgba(255,255,255,.72); margin-top: 7px; }
-.ah-mode i { width: 11px; height: 11px; border-radius: 50%; border: 1px solid rgba(255,255,255,.5); font-style: normal; font-size: 7.5px; display: inline-flex; align-items: center; justify-content: center; }
-/* Tarjeta MEMBERS: chips de circulo + NOMBRE, no burbujas sueltas. */
-.mem-row { display: flex; gap: 5px; overflow: hidden; }
-.mem-chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px 2px 2px; border-radius: 999px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); font-size: 10px; font-weight: 600; white-space: nowrap; flex: 0 0 auto; }
-.mem-chip .ava { width: 18px; height: 18px; font-size: 8px; }
-/* Barra inferior. */
-.bnav { margin-top: auto; display: flex; padding-top: 8px; border-top: 1px solid var(--line); }
-.bnav div { flex: 1; text-align: center; font-size: 8px; font-weight: 600; color: var(--muted); }
-.bnav div.on { color: var(--teal); }
-.bnav svg { width: 15px; height: 15px; display: block; margin: 0 auto 2px; stroke: currentColor; fill: none; stroke-width: 1.8; }
-/* Bloque "ADD AN EXPENSE" tal y como esta en la app. */
-.addx { display: flex; gap: 6px; }
-.addx .fld { flex: 1; min-width: 0; border-radius: 999px; border: 1px solid var(--card-border); background: rgba(255,255,255,.04); padding: 7px 10px; font-size: 10px; color: var(--muted); }
-.addx .go { display: inline-flex; align-items: center; gap: 4px; border-radius: 999px; background: var(--teal); color: #fff; font-size: 10.5px; font-weight: 700; padding: 7px 13px; flex: 0 0 auto; }
-.addx3 { display: flex; gap: 6px; margin-top: 7px; }
-.addx3 span { flex: 1; text-align: center; border-radius: 12px; border: 1px solid var(--card-border); background: rgba(255,255,255,.04); padding: 7px 2px; font-size: 9.5px; font-weight: 600; }
-.addx3 svg { width: 13px; height: 13px; display: block; margin: 0 auto 3px; stroke: currentColor; fill: none; stroke-width: 1.8; }
-/* Baloo 2 es ancha: bajamos un punto los titulos para que no partan linea. */
-.phone .ah-name { font-size: 19px; }
-.phone .exp-t { font-size: 12px; }
-.phone .exp .amount { font-size: 11.5px; }
-
-/* La linea Simplified anadio alto al hero; se compensa apretando la slide de Saldos. */
-.phone .settle-row { font-size: 12px; gap: 5px 5px; }
-.phone .pay-sheet { margin-top: 7px; padding-top: 7px; }
-.phone .card.soft { padding: 10px 11px; }
-/* En espanol los textos son mas largos y la slide de Gastos desbordaba. */
-.phone .addx3 span { padding: 6px 2px; font-size: 9px; }
-.phone .addx .fld, .phone .addx .go { padding-top: 6px; padding-bottom: 6px; }
-.phone .mem-chip { padding: 1px 7px 1px 1px; font-size: 9.5px; }
-.phone .bnav { padding-top: 6px; }
-.phone .ap-head { padding-bottom: 2px; }
-.phone .app-hero { padding: 13px 15px; }
-/* "Cena en Roma" partia en dos lineas con Baloo 2. */
-.phone .ah-name { font-size: 17.5px; }
-/* La etiqueta del metodo de pago quedaba casi ilegible sobre el fondo oscuro. */
-.phone .pay-k { color: var(--ink); }
-.phone .pay-copy { background: rgba(15,163,163,.18); color: #7CF5EE; }
+.shots .phone-status { flex: 0 0 auto; padding: 9px 14px 5px; color: #e9eaee; }
+.shots .phone-status svg { fill: #e9eaee; }
+.shot-stage { position: relative; flex: 1 1 auto; aspect-ratio: 640 / 1385; }
+.shots .slide {
+  position: absolute; inset: 0; padding: 0; display: block;
+  opacity: 0; transform: none; transition: opacity .5s ease;
+}
+.shots .slide.on { opacity: 1; }
+.shots .slide img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+@media (prefers-reduced-motion: reduce) { .shots .slide { transition: none; } }
+/* En el mockup dibujado la barra de estado iba ABSOLUTE y se superponia al
+   contenido (que llevaba padding). Con una captura real eso la dejaba encima
+   de la cabecera de la app y con texto oscuro sobre oscuro: aqui pasa a ser
+   una franja propia por encima de la imagen. */
+.shots .phone-status { position: relative; inset: auto; background: #0b0c10; }
+.shots .phone-status .ps-time { color: #e9eaee; font-family: 'Baloo 2', system-ui, sans-serif; font-size: 12.5px; }
+.shots .phone-status svg { fill: #e9eaee; }

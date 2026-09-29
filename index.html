@@ -162,289 +162,54 @@
       <!-- phone mockup: animated app tour -->
       <div class="phone-wrap" data-slideshow>
         <div class="phone">
-          <div class="phone-screen slides">
-            <!-- status bar (decorative, like a real phone) -->
+          <!-- Capturas REALES de la app (modo oscuro, ingles), generadas desde
+               la app con datos de demo. Ya no es un mockup dibujado a mano: ese
+               se desincronizaba con cada cambio de UI. Para regenerarlas, ver
+               scripts/README-screenshots.md -->
+          <div class="phone-screen shots">
             <div class="phone-status" aria-hidden="true">
               <span class="ps-time">9:41</span>
               <span class="ps-ic">
                 <svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
                 <svg viewBox="0 0 16 12"><path d="M8 2.4c2.6 0 5 1 6.8 2.7l-1.4 1.5A7.6 7.6 0 0 0 8 4.4 7.6 7.6 0 0 0 2.6 6.6L1.2 5.1A9.6 9.6 0 0 1 8 2.4Zm0 3.6c1.6 0 3 .6 4.1 1.6l-1.5 1.5A3.7 3.7 0 0 0 8 8a3.7 3.7 0 0 0-2.6 1.1L3.9 7.6A5.7 5.7 0 0 1 8 6Zm0 3.4 1.7 1.7-1.7 1.7-1.7-1.7L8 9.4Z"/></svg>
-                <svg class="ps-bat" viewBox="0 0 24 12"><rect x="0.5" y="0.5" width="20" height="11" rx="3" fill="none" stroke="#1a1c22" stroke-opacity="0.5"/><rect x="2.5" y="2.5" width="14" height="7" rx="1.5"/><rect x="21.5" y="3.5" width="2" height="5" rx="1"/></svg>
+                <svg class="ps-bat" viewBox="0 0 24 12"><rect x="0.5" y="0.5" width="20" height="11" rx="3" fill="none" stroke="#e9eaee" stroke-opacity="0.5"/><rect x="2.5" y="2.5" width="14" height="7" rx="1.5"/><rect x="21.5" y="3.5" width="2" height="5" rx="1"/></svg>
               </span>
             </div>
-
-            <!-- A · Home: your groups -->
-            <div class="slide on">
-              <div class="home-head">
-                <img src="assets/logo-s.png" width="24" height="24" alt="Settlia" style="display:block;border-radius:5px;background:linear-gradient(145deg,#0f2d54,#0a1a2e);box-shadow:inset 0 1px 0 rgba(255,255,255,0.18),0 2px 6px rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.10);padding:3px" />
-                <span class="hh-wm">Settlia</span>
+            <div class="shot-stage">
+              <div class="slide on">
+                <img src="assets/app/01-home.webp" width="640" height="1385" loading="eager" fetchpriority="high" decoding="async"
+                     alt="Your groups in Settlia, each with its balance" data-es-alt="Tus grupos en Settlia, cada uno con su saldo" />
               </div>
-              <div class="overall-lbl" data-es="Tu balance global">Your overall balance</div><div style="display:flex;gap:6px;margin:4px 2px 4px;justify-content:center">
-                <span style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;padding:3px 8px;border-radius:999px;background:rgba(255,255,255,.10);color:#e9eaee" data-es="T:&nbsp;$687,00">T:&nbsp;$687.00</span>
-                <span style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;padding:3px 8px;border-radius:999px;background:rgba(209,68,68,.12);color:#D14444" data-es="↓&nbsp;$24,30">↓&nbsp;$24.30</span>
-                <span style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;padding:3px 8px;border-radius:999px;background:rgba(10,139,94,.12);color:#0A8B5E" data-es="↑&nbsp;$18,75">↑&nbsp;$18.75</span>
+              <div class="slide">
+                <img src="assets/app/02-expenses.webp" width="640" height="1385" loading="lazy" decoding="async"
+                     alt="A trip group: total, settle score and the AI add box" data-es-alt="Un grupo de viaje: total, settle score y la caja de IA" />
               </div>
-              <div class="groups-h" data-es="Tus grupos">Your groups</div>
-              <div class="mini-group">
-                <svg width="38" height="38" viewBox="0 0 38 38"><g transform="translate(19,19) rotate(-90)"><circle r="15" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="5"/><circle r="15" fill="none" stroke="#0FA3A3" stroke-width="5" stroke-linecap="round" stroke-dasharray="75 95"/></g><text x="19" y="20" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="800" fill="#e9eaee" font-family="'Space Mono',monospace">80</text></svg>
-                <div class="mg-body"><div class="mg-name" data-es="Cena en Roma">Rome dinner</div><div class="mg-meta" data-es="4 personas · $74,50 · 1 gasto">4 people · $74.50 · 1 expense</div><div class="mg-avas"><span class="mg-ava" style="background:#0FA3A322;color:#0FA3A3">S</span><span class="mg-ava" style="background:#5B5BF022;color:#5B5BF0">A</span><span class="mg-ava" style="background:#FF5A4D22;color:#FF5A4D">P</span><span class="mg-ava" style="background:#E8920C22;color:#E8920C">J</span></div></div>
-                <div class="mg-bal" style="color:#0A8B5E" data-es="+$18,75">+$18.75</div>
+              <div class="slide">
+                <img src="assets/app/03-expense-list.webp" width="640" height="1385" loading="lazy" decoding="async"
+                     alt="The group's expense list with who paid" data-es-alt="La lista de gastos del grupo con quien pago" />
               </div>
-              <div class="mini-group">
-                <svg width="38" height="38" viewBox="0 0 38 38"><g transform="translate(19,19) rotate(-90)"><circle r="15" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="5"/><circle r="15" fill="none" stroke="#0FA3A3" stroke-width="5" stroke-linecap="round" stroke-dasharray="94 95"/></g><text x="19" y="20" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="800" fill="#e9eaee" font-family="'Space Mono',monospace">100</text></svg>
-                <div class="mg-body"><div class="mg-name" data-es="Piso compartido">Flat share</div><div class="mg-meta" data-es="4 personas · $398,40 · 4 gastos">4 people · $398.40 · 4 expenses</div><div class="mg-avas"><span class="mg-ava" style="background:#0FA3A322;color:#0FA3A3">S</span><span class="mg-ava" style="background:#5B5BF022;color:#5B5BF0">A</span><span class="mg-ava" style="background:#FF5A4D22;color:#FF5A4D">P</span><span class="mg-ava" style="background:#E8920C22;color:#E8920C">J</span></div></div>
-                <div class="mg-bal muted" data-es="al día">settled</div>
+              <div class="slide">
+                <img src="assets/app/04-balances.webp" width="640" height="1385" loading="lazy" decoding="async"
+                     alt="Group balances: what each person paid and their net" data-es-alt="Saldos del grupo: lo que puso cada uno y su neto" />
               </div>
-              <div class="mini-group">
-                <svg width="38" height="38" viewBox="0 0 38 38"><g transform="translate(19,19) rotate(-90)"><circle r="15" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="5"/><circle r="15" fill="none" stroke="#E0A400" stroke-width="5" stroke-linecap="round" stroke-dasharray="56 95"/></g><text x="19" y="20" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="800" fill="#e9eaee" font-family="'Space Mono',monospace">60</text></svg>
-                <div class="mg-body"><div class="mg-name" data-es="Finde en la playa">Beach weekend</div><div class="mg-meta" data-es="5 personas · $612,00 · 9 gastos">5 people · $612.00 · 9 expenses</div><div class="mg-avas"><span class="mg-ava" style="background:#0FA3A322;color:#0FA3A3">S</span><span class="mg-ava" style="background:#5B5BF022;color:#5B5BF0">A</span><span class="mg-ava" style="background:#FF5A4D22;color:#FF5A4D">P</span><span class="mg-ava" style="background:#E8920C22;color:#E8920C">J</span><span class="mg-ava" style="background:#0EA5E922;color:#0EA5E9">M</span></div></div>
-                <div class="mg-bal" style="color:#D14444" data-es="−$24,30">−$24.30</div>
+              <div class="slide">
+                <img src="assets/app/05-settle-up.webp" width="640" height="1385" loading="lazy" decoding="async"
+                     alt="Settle up: who pays whom, with the payment method" data-es-alt="Para saldar: quien paga a quien, con el metodo de pago" />
+              </div>
+              <div class="slide">
+                <img src="assets/app/06-stats.webp" width="640" height="1385" loading="lazy" decoding="async"
+                     alt="Group stats: total, per person and paid by person" data-es-alt="Estadisticas del grupo: total, por persona y quien pago" />
               </div>
             </div>
-
-            <!-- B · Group: Expenses -->
-            <div class="slide">
-              <div class="ap-head">
-                <img class="ap-logo" src="assets/logo-s.png" alt="Settlia" style="background:linear-gradient(145deg,#0f2d54,#0a1a2e);padding:3px;border:1px solid rgba(255,255,255,.10)" />
-                <span class="ap-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></span>
-                <span class="sp">
-                  <span class="ap-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/></svg></span>
-                  <span class="ap-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8l4 4v16H6z"/><path d="M14 2v5h5"/></svg></span>
-                  <span class="ap-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></span>
-                  <span class="ap-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11h14V8"/><path d="M10 12h4"/></svg></span>
-                </span>
-              </div>
-              <div class="app-hero">
-                <div class="ah-top" style="display:none">
-                  <span class="ah-brand">Settlia</span>
-                  <span class="ah-bell">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 6 2.5 8 2.5 8h-17S6 15 6 9"/><path d="M10.2 21a2 2 0 0 0 3.6 0"/></svg>
-                    <i class="bell-dot"></i>
-                  </span>
-                </div>
-                <div class="ah-row">
-                  <div>
-                    <div class="ah-label" data-es="Grupo">Group</div>
-                    <div class="ah-name" data-es="Cena en Roma">Rome dinner</div>
-                    <div class="ah-pills">
-                      <span class="ah-pill owe" data-es="↓ $0,00">↓ $0.00</span>
-                      <span class="ah-pill owed" data-es="↑ $18,75">↑ $18.75</span>
-                    </div>
-                    <div class="ah-mode"><span data-es="Simplificado">Simplified</span> <i>i</i></div>
-                  </div>
-                  <div class="ring">
-                    <svg viewBox="0 0 64 64" width="54" height="54"><g transform="translate(32,32) rotate(-90)"><circle r="27" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="7"/><circle r="27" fill="none" stroke="#7CF5EE" stroke-width="7" stroke-linecap="round" stroke-dasharray="136 170"/></g><text x="32" y="33" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="800" fill="#fff" font-family="'Space Mono',monospace">80</text></svg>
-                    <div class="ring-cap">Settle Score</div>
-                  </div>
-                </div>
-              </div>
-              <div class="card soft" style="margin-bottom:8px">
-                <div class="card-head" data-es="Miembros · 4">Members · 4</div>
-                <div class="mem-row">
-                  <span class="mem-chip"><span class="ava" style="background:#0FA3A3">S</span>Siena</span>
-                  <span class="mem-chip"><span class="ava" style="background:#5B5BF0">A</span>Alexa</span>
-                  <span class="mem-chip"><span class="ava" style="background:#FF5A4D">P</span>Patrick</span>
-                  <span class="mem-chip"><span class="ava" style="background:#E8920C">J</span>John</span>
-                </div>
-              </div>
-              <div class="mini-tabs"><span class="mini-tab on" data-es="Gastos">Expenses</span><span class="mini-tab" data-es="Saldos">Balances</span><span class="mini-tab" data-es="Estadísticas">Stats</span><span class="mini-tab" data-es="Logros">Achievements</span></div>
-              <div class="card soft" style="margin-bottom:8px">
-                <div class="card-head" data-es="Añadir un gasto">Add an expense</div>
-                <div class="addx">
-                  <span class="fld" data-es="Ej. «café 12 con Ana»">E.g. "coffee 12 with Ana"</span>
-                  <span class="go"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><path d="M12 2l1.7 4.8L18.5 8.5 13.7 10.2 12 15l-1.7-4.8L5.5 8.5 10.3 6.8z"/></svg><span data-es="Añadir">Add</span></span>
-                </div>
-                <div class="addx3">
-                  <span><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/></svg><span data-es="Voz">Voice</span></span>
-                  <span><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7H7l1.3-2h7.4L17 7h2.5A1.5 1.5 0 0 1 21 8.5V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="12.5" r="3.3"/></svg><span data-es="Foto">Scan</span></span>
-                  <span><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg><span data-es="Manual">Manual</span></span>
-                </div>
-              </div>
-              <div class="card soft exp">
-                <span class="exp-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a1c22" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v5a2 2 0 0 0 4 0V3"/><path d="M8 8v13"/><path d="M16 3c-1.4 1.2-2 3.4-2 6 0 1.6.7 2.6 2 2.8V21"/></svg></span>
-                <div class="exp-body"><div class="exp-t" data-es="Cena italiana">Italian dinner</div><div class="exp-m muted" data-es="Siena pagó · entre 4 · 15 mar">Siena paid · among 4 · Mar 15</div></div>
-                <span class="amount" data-es="$74,50">$74.50</span>
-                <svg class="exp-chev" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-              </div>
-              <div class="bnav">
-                <div class="on"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/></svg><span data-es="Grupos">Groups</span></div>
-                <div><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/></svg><span data-es="Amigos">Friends</span></div>
-                <div><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 6 2.5 8 2.5 8h-17S6 15 6 9"/><path d="M10.2 21a2 2 0 0 0 3.6 0"/></svg><span data-es="Actividad">Activity</span></div>
-                <div><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5 20a7 7 0 0 1 14 0"/></svg><span data-es="Perfil">Profile</span></div>
-              </div>
-            </div>
-
-            <!-- C · Add an expense (AI: text / voice / scan) -->
-            <div class="slide">
-              <div class="slim-head" data-es="Añadir un gasto">Add an Expense</div>
-              <div class="add-input">
-                <span class="ai-spark"><svg width="15" height="15" viewBox="0 0 24 24" fill="#5B5BF0"><path d="M12 2l1.7 4.8L18.5 8.5 13.7 10.2 12 15l-1.7-4.8L5.5 8.5 10.3 6.8z"/></svg></span>
-                <span data-es="«Cena italiana, pagó Siena 74,50, entre los 4»">“Italian dinner, Siena paid 74.50, split among the 4 of us”</span>
-              </div>
-              <div class="add-methods">
-                <span class="method-chip on">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
-                  <span data-es="Texto">Text</span>
-                </span>
-                <span class="method-chip">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/></svg>
-                  <span data-es="Voz">Voice</span>
-                </span>
-                <span class="method-chip">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7H7l1.3-2h7.4L17 7h2.5A1.5 1.5 0 0 1 21 8.5V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="12.5" r="3.3"/></svg>
-                  <span data-es="Foto">Scan</span>
-                </span>
-              </div>
-              <button class="ai-btn" type="button">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="#fff"><path d="M12 2l1.7 4.8L18.5 8.5 13.7 10.2 12 15l-1.7-4.8L5.5 8.5 10.3 6.8z"/></svg>
-                <span data-es="Interpretar con IA">Interpret with AI</span>
-              </button>
-              <div class="ai-res-lbl" data-es="La IA creó">AI created</div>
-              <div class="card soft exp">
-                <span class="exp-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a1c22" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v5a2 2 0 0 0 4 0V3"/><path d="M8 8v13"/><path d="M16 3c-1.4 1.2-2 3.4-2 6 0 1.6.7 2.6 2 2.8V21"/></svg></span>
-                <div class="exp-body"><div class="exp-t" data-es="Cena italiana">Italian dinner</div><div class="exp-m muted" data-es="Siena pagó · entre 4">Siena paid · among 4</div></div>
-                <span class="amount" data-es="$74,50">$74.50</span>
-              </div>
-            </div>
-
-            <!-- C2 · Scan a receipt → AI itemized split -->
-            <div class="slide">
-              <div class="slim-head" data-es="Escanea el recibo">Scan the receipt</div>
-              <div style="display:flex;gap:10px;align-items:flex-start">
-                <div style="flex:0 0 92px;background:#fff;border-radius:10px;box-shadow:0 6px 16px rgba(0,0,0,.14);padding:10px 9px;font-family:'Space Mono',monospace;font-size:8px;color:#333;line-height:1.75">
-                  <div style="text-align:center;font-weight:700;letter-spacing:.5px">TRATTORIA</div>
-                  <div style="border-top:1px dashed #ccc;margin:5px 0"></div>
-                  <div style="display:flex;justify-content:space-between"><span>Pizza</span><span>18,00</span></div>
-                  <div style="display:flex;justify-content:space-between"><span>Pasta</span><span>16,50</span></div>
-                  <div style="display:flex;justify-content:space-between"><span>Wine</span><span>24,00</span></div>
-                  <div style="display:flex;justify-content:space-between"><span>Water</span><span>4,00</span></div>
-                  <div style="border-top:1px dashed #ccc;margin:5px 0"></div>
-                  <div style="display:flex;justify-content:space-between;font-weight:700"><span>TOTAL</span><span>74,50</span></div>
-                </div>
-                <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:6px">
-                  <div style="display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;color:#5B5BF0"><svg width="12" height="12" viewBox="0 0 24 24" fill="#5B5BF0"><path d="M12 2l1.7 4.8L18.5 8.5 13.7 10.2 12 15l-1.7-4.8L5.5 8.5 10.3 6.8z"/></svg><span data-es="La IA lo desglosó">AI itemized it</span></div>
-                  <div class="card soft" style="padding:8px 9px;display:flex;align-items:center;gap:7px"><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:11px">Pizza</div><div class="muted" style="font-size:9px" data-es="Siena, Alexa">Siena, Alexa</div></div><span class="amount" style="font-size:11px" data-es="$18,00">$18.00</span></div>
-                  <div class="card soft" style="padding:8px 9px;display:flex;align-items:center;gap:7px"><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:11px">Wine</div><div class="muted" style="font-size:9px" data-es="entre los 4">split 4 ways</div></div><span class="amount" style="font-size:11px" data-es="$24,00">$24.00</span></div>
-                  <div style="font-size:9px;color:#0A8B5E;font-weight:700;text-align:center;margin-top:2px" data-es="Asigna cada plato a quien lo pidió">Assign each item to who ordered it</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- D · Group: Balances + settle up with payment details -->
-            <div class="slide">
-              <div class="app-hero">
-                <div class="ah-row">
-                  <div>
-                    <div class="ah-label" data-es="Grupo">Group</div>
-                    <div class="ah-name" data-es="Cena en Roma">Rome dinner</div>
-                    <div class="ah-pills">
-                      <span class="ah-pill" style="background:rgba(255,255,255,.22);color:#fff" data-es="T $74,50">T $74.50</span>
-                      <span class="ah-pill owe" data-es="↓ $0,00">↓ $0.00</span>
-                      <span class="ah-pill owed" data-es="↑ $18,75">↑ $18.75</span>
-                    </div>
-                    <div class="ah-mode"><span data-es="Simplificado">Simplified</span> <i>i</i></div>
-                  </div>
-                  <div class="ring">
-                    <svg viewBox="0 0 64 64" width="54" height="54"><g transform="translate(32,32) rotate(-90)"><circle r="27" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="7"/><circle r="27" fill="none" stroke="#7CF5EE" stroke-width="7" stroke-linecap="round" stroke-dasharray="136 170"/></g><text x="32" y="33" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="800" fill="#fff" font-family="'Space Mono',monospace">80</text></svg>
-                    <div class="ring-cap">Settle Score</div>
-                  </div>
-                </div>
-              </div>
-              <div class="mini-tabs"><span class="mini-tab" data-es="Gastos">Expenses</span><span class="mini-tab on" data-es="Saldos">Balances</span><span class="mini-tab" data-es="Estadísticas">Stats</span><span class="mini-tab" data-es="Logros">Achievements</span></div>
-              <div class="card soft" style="margin-bottom:8px">
-                <div class="card-head" data-es="Saldos del grupo">Group balances</div>
-                <div style="display:flex;align-items:center;gap:6px;padding:2px 0"><span class="ava" style="background:#0FA3A3">S</span><span style="font-size:11px;flex:1 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>Siena</b><span class="muted" style="font-size:9px" data-es=" · pagó $74,50"> · paid $74.50</span></span><span class="amount" style="font-size:11px;color:#0A8B5E" data-es="+$18,75">+$18.75</span><span style="width:17px;height:17px;border-radius:50%;border:1px solid rgba(255,255,255,.22);display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);flex:0 0 auto">?</span></div>
-                <div style="display:flex;align-items:center;gap:6px;padding:2px 0"><span class="ava" style="background:#FF5A4D">P</span><span style="font-size:11px;flex:1 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>Patrick</b><span class="muted" style="font-size:9px" data-es=" · pagó $0,00"> · paid $0.00</span></span><span class="amount" style="font-size:11px;color:#D14444" data-es="−$18,75">−$18.75</span><span style="width:17px;height:17px;border-radius:50%;border:1px solid rgba(255,255,255,.22);display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);flex:0 0 auto">?</span></div>
-                <div style="display:flex;align-items:center;gap:6px;padding:2px 0"><span class="ava" style="background:#5B5BF0">A</span><span style="font-size:11px;flex:1 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>Alexa</b><span class="muted" style="font-size:9px" data-es=" · pagó $0,00"> · paid $0.00</span></span><span class="amount muted" style="font-size:11px" data-es="al día">settled</span><span style="width:17px;height:17px;border-radius:50%;border:1px solid rgba(255,255,255,.22);display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);flex:0 0 auto">?</span></div>
-              </div>
-              <div class="card soft">
-                <div class="card-head" data-es="Para saldar">To settle up</div>
-                <div class="muted" style="font-size:9px;margin:-3px 0 7px;font-weight:600" data-es="Deudas simplificadas · mínimo de pagos">Simplified debts · fewest payments</div>
-                <div class="settle-row"><span class="ava" style="background:#FF5A4D">P</span><b>Patrick</b><span class="muted" data-es="paga a">pays</span><span class="ava" style="background:#0FA3A3">S</span><b>Siena</b><span class="amount" data-es="$18,75">$18.75</span><span style="width:17px;height:17px;border-radius:50%;border:1px solid rgba(255,255,255,.22);display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);flex:0 0 auto;margin-left:6px">?</span></div>
-                <div class="pay-sheet">
-                  <div class="pay-sheet-h" data-es="Datos de pago al tocar «Pagar»">Payment details on “Pay”</div>
-                  <div class="pay-line"><span class="pay-k">PayID</span><span class="mono">siena@bank.com</span><span class="pay-copy" data-es="Copiar">Copy</span></div>
-                </div>
-                <div class="pills"><span class="pill teal" data-es="Pagar">Pay</span><span class="pill" data-es="Método">Method</span></div>
-              </div>
-            </div>
-
-            <!-- E · Notifications -->
-            <div class="slide">
-              <div class="slim-head" data-es="Notificaciones">Notifications</div>
-              <div class="notif-item">
-                <span class="notif-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
-                <div class="notif-tx"><div data-es="Alexa añadió «Taxi» ($32,00)">Alexa added “Taxi” ($32.00)</div><div class="notif-time" data-es="en Cena en Roma · 2m">in Rome dinner · 2m</div></div>
-              </div>
-              <div class="notif-item">
-                <span class="notif-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19"/></svg></span>
-                <div class="notif-tx"><div data-es="Patrick pagó $18,75 a Siena">Patrick paid $18.75 to Siena</div><div class="notif-time" data-es="en Cena en Roma · 1h">in Rome dinner · 1h</div></div>
-              </div>
-              <div class="notif-item">
-                <span class="notif-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4h11l-1.5 3.5L16 11H5"/></svg></span>
-                <div class="notif-tx"><div data-es="Alguien pidió revisar «Compra»">Someone requested a review of “Groceries”</div><div class="notif-time" data-es="en Piso compartido · 3h">in Flat share · 3h</div></div>
-              </div>
-              <div class="notif-item">
-                <span class="notif-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M21 20a6 6 0 0 0-4.5-5.8"/></svg></span>
-                <div class="notif-tx"><div data-es="John se unió al grupo">John joined the group</div><div class="notif-time" data-es="en Finde en la playa · 1d">in Beach weekend · 1d</div></div>
-              </div>
-            </div>
-
-            <!-- F · Group: Stats -->
-            <div class="slide">
-              <div class="app-hero">
-                <div class="ah-row">
-                  <div>
-                    <div class="ah-label" data-es="Grupo">Group</div>
-                    <div class="ah-name" data-es="Cena en Roma">Rome dinner</div>
-                    <div class="ah-pills">
-                      <span class="ah-pill" style="background:rgba(255,255,255,.22);color:#fff" data-es="T $74,50">T $74.50</span>
-                      <span class="ah-pill owed" data-es="↑ $18,75">↑ $18.75</span>
-                    </div>
-                    <div class="ah-mode"><span data-es="Simplificado">Simplified</span> <i>i</i></div>
-                  </div>
-                  <div class="ring">
-                    <svg viewBox="0 0 64 64" width="54" height="54"><g transform="translate(32,32) rotate(-90)"><circle r="27" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="7"/><circle r="27" fill="none" stroke="#7CF5EE" stroke-width="7" stroke-linecap="round" stroke-dasharray="136 170"/></g><text x="32" y="33" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="800" fill="#fff" font-family="'Space Mono',monospace">80</text></svg>
-                    <div class="ring-cap">Settle Score</div>
-                  </div>
-                </div>
-              </div>
-              <div class="mini-tabs"><span class="mini-tab" data-es="Gastos">Expenses</span><span class="mini-tab" data-es="Saldos">Balances</span><span class="mini-tab on" data-es="Estadísticas">Stats</span><span class="mini-tab" data-es="Logros">Achievements</span></div>
-              <div class="stat-grid">
-                <div class="stat-card"><div class="stat-lbl" data-es="Gasto total">Total spent</div><div class="stat-val" data-es="$74,50">$74.50</div></div>
-                <div class="stat-card"><div class="stat-lbl" data-es="Por persona">Per person</div><div class="stat-val" data-es="$18,63">$18.63</div></div>
-              </div>
-              <div class="card soft" style="margin-top:8px">
-                <div class="card-head" data-es="Pagado por persona">Paid by person</div>
-                <div class="bar-row">
-                  <div class="bar-top"><span class="who"><span class="ava" style="background:#0FA3A3">S</span>Siena</span><span class="amount" data-es="$74,50">$74.50</span></div>
-                  <div class="bar-track"><div class="bar-fill" style="width:100%;background:#0FA3A3"></div></div>
-                </div>
-                <div class="bar-row">
-                  <div class="bar-top"><span class="who"><span class="ava" style="background:#5B5BF0">A</span>Alexa</span><span class="amount muted" data-es="$0,00">$0.00</span></div>
-                  <div class="bar-track"><div class="bar-fill" style="width:0%;background:#5B5BF0"></div></div>
-                </div>
-                <div class="bar-row">
-                  <div class="bar-top"><span class="who"><span class="ava" style="background:#FF5A4D">P</span>Patrick</span><span class="amount muted" data-es="$0,00">$0.00</span></div>
-                  <div class="bar-track"><div class="bar-fill" style="width:0%;background:#FF5A4D"></div></div>
-                </div>
-                <div class="bar-row">
-                  <div class="bar-top"><span class="who"><span class="ava" style="background:#E8920C">J</span>John</span><span class="amount muted" data-es="$0,00">$0.00</span></div>
-                  <div class="bar-track"><div class="bar-fill" style="width:0%;background:#E8920C"></div></div>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
         <div class="dots">
-          <button class="dot on" data-i="0" aria-label="Home"></button>
-          <button class="dot" data-i="1" aria-label="Expenses"></button>
-          <button class="dot" data-i="2" aria-label="Add expense"></button>
-          <button class="dot" data-i="3" aria-label="Scan receipt"></button>
-          <button class="dot" data-i="4" aria-label="Balances"></button>
-          <button class="dot" data-i="5" aria-label="Notifications"></button>
-          <button class="dot" data-i="6" aria-label="Stats"></button>
+          <button class="dot on" data-i="0" aria-label="Groups"></button>
+          <button class="dot" data-i="1" aria-label="Group"></button>
+          <button class="dot" data-i="2" aria-label="Expenses"></button>
+          <button class="dot" data-i="3" aria-label="Balances"></button>
+          <button class="dot" data-i="4" aria-label="Settle up"></button>
+          <button class="dot" data-i="5" aria-label="Stats"></button>
         </div>
       </div>
     </section>
