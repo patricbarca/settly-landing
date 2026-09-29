@@ -119,13 +119,24 @@ h1 { font-size: 58px; font-weight: 800; line-height: 1.02; }
   display: flex; flex-direction: column; gap: 10px;
 }
 .app-hero {
+  /* Mismo stack que .hero en la app (src/index.css), escalado a la tarjeta del
+     mockup: 3 radiales + los blobs en 'screen' que le dan el brillo violeta→teal.
+     Sin los blobs la tarjeta se quedaba navy oscuro y no se parecía a la app. */
   border-radius: 22px; padding: 16px; color: #fff; position: relative; overflow: hidden;
+  isolation: isolate; flex: 0 0 auto;
   background:
-    radial-gradient(420px 260px at 14% 16%, #6e6cf5 0%, transparent 56%),
-    radial-gradient(360px 260px at 92% 6%, #15b3b0 0%, transparent 52%),
+    radial-gradient(300px 185px at 12% 14%, #6e6cf5 0%, transparent 56%),
+    radial-gradient(250px 185px at 90% 4%, #15b3b0 0%, transparent 52%),
+    radial-gradient(270px 225px at 84% 98%, #18a6e8 0%, transparent 56%),
     linear-gradient(150deg, #1c1746, #241c53 60%, #1a1640);
-  box-shadow: 0 20px 40px -26px rgba(34, 27, 77, 0.6);
+  box-shadow: 0 20px 40px -26px rgba(34, 27, 77, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
+.app-hero::before, .app-hero::after {
+  content: ""; position: absolute; border-radius: 50%; filter: blur(22px);
+  opacity: 0.5; z-index: -1; mix-blend-mode: screen; pointer-events: none;
+}
+.app-hero::before { width: 110px; height: 110px; background: #7b79ff; top: -30px; left: -20px; }
+.app-hero::after { width: 100px; height: 100px; background: #19c7c0; bottom: -35px; right: -15px; }
 .ah-top { display: flex; align-items: center; justify-content: space-between; }
 .ah-brand { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 18px; }
 .ah-bell { position: relative; display: inline-flex; }
@@ -142,8 +153,8 @@ h1 { font-size: 58px; font-weight: 800; line-height: 1.02; }
 .ah-pill { font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
 .ah-pill.owe { background: rgba(255, 90, 77, 0.22); color: #ffc2bb; }
 .ah-pill.owed { background: rgba(46, 213, 115, 0.22); color: #9bf6c9; }
-.ring { text-align: center; }
-.ring-cap { font-family: 'Space Mono', monospace; font-size: 8px; text-transform: uppercase; letter-spacing: .08em; color: rgba(255, 255, 255, 0.7); margin-top: 2px; }
+.ring { text-align: center; flex: 0 0 auto; }
+.ring-cap { font-family: 'Space Mono', monospace; font-size: 7px; white-space: nowrap; text-transform: uppercase; letter-spacing: .08em; color: rgba(255, 255, 255, 0.7); margin-top: 2px; }
 
 .card.soft {
   background: rgba(255, 255, 255, 0.72); border: 1px solid rgba(255, 255, 255, 0.8);
@@ -153,15 +164,18 @@ h1 { font-size: 58px; font-weight: 800; line-height: 1.02; }
 .settle-row { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 6px; font-size: 13px; }
 .ava { width: 22px; height: 22px; border-radius: 50%; color: #fff; font-size: 10px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; }
 .ava.sm { width: 18px; height: 18px; font-size: 9px; margin-right: -4px; border: 1.5px solid #fff; }
-.amount { margin-left: auto; font-family: 'Space Mono', monospace; font-weight: 700; }
+.amount { margin-left: auto; font-family: 'Space Mono', monospace; font-weight: 700; white-space: nowrap; }
 .pills { display: flex; gap: 6px; margin-top: 10px; }
 .pill { font-size: 11px; font-weight: 600; padding: 4px 11px; border-radius: 999px; background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(0, 0, 0, 0.08); color: #33363e; }
 .pill.teal { background: var(--teal); color: #fff; border-color: var(--teal); }
-.exp { display: flex; align-items: center; gap: 10px; }
-.exp-ic { width: 38px; height: 38px; border-radius: 12px; background: rgba(255, 255, 255, 0.7); display: flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+.exp { display: flex; align-items: center; gap: 8px; }
+.exp .amount { font-size: 12px; }
+.exp-ic { width: 32px; height: 32px; border-radius: 10px; background: rgba(255, 255, 255, 0.7); display: flex; align-items: center; justify-content: center; flex: 0 0 auto; }
 .exp-body { flex: 1; min-width: 0; }
-.exp-t { font-weight: 700; font-size: 14px; }
-.exp-m { font-size: 11.5px; }
+/* En la app el gasto ocupa UNA linea: titulo y meta se truncan, no se parten
+   en tres renglones (ver ExpenseList.tsx). */
+.exp-t { font-weight: 700; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.exp-m { font-size: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .exp-chev { color: var(--muted); flex: 0 0 auto; }
 
 /* ---- stats slide ---- */
@@ -317,18 +331,25 @@ h1 { font-size: 58px; font-weight: 800; line-height: 1.02; }
 /* ---- hero phone app tour ---- */
 .phone-wrap { flex: 0 0 300px; display: flex; flex-direction: column; align-items: center; }
 .home-head { display: flex; align-items: center; gap: 8px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 19px; padding: 2px; }
+.overall-lbl { font-size: 8.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); text-align: center; margin: 8px 0 0; }
+/* En la app "Tus grupos" es un h2 en Bricolage, no una etiqueta mono. */
+.groups-h { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; margin: 9px 2px 6px; letter-spacing: -.02em; }
 .sub-lbl { font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 8px 2px; }
 .slim-head { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 16px; padding: 2px 2px 6px; }
 .mini-group { display: flex; align-items: center; gap: 10px; background: rgba(255, 255, 255, 0.72); border: 1px solid rgba(255, 255, 255, 0.8); border-radius: 16px; padding: 10px; margin-bottom: 8px; box-shadow: 0 10px 26px -22px rgba(58, 58, 90, 0.5); }
 .mg-body { flex: 1; min-width: 0; }
-.mg-name { font-weight: 700; font-size: 14px; }
-.mg-meta { font-size: 11px; color: var(--muted); font-family: 'Space Mono', monospace; }
+.mg-name { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 13.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mg-meta { font-size: 10.5px; color: var(--muted); line-height: 1.35; }
+.mg-avas { display: flex; gap: 3px; flex-wrap: wrap; margin-top: 5px; }
+.mg-ava { width: 17px; height: 17px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 700; }
 .mg-bal { font-family: 'Space Mono', monospace; font-weight: 700; font-size: 13px; }
 .mini-ava-row { display: flex; gap: 7px; padding: 6px 0 4px; }
 .mini-ava { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #33363e; }
-.mini-tabs { display: flex; gap: 2px; background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(255, 255, 255, 0.7); border-radius: 999px; padding: 3px; margin: 6px 0 10px; }
-.mini-tab { flex: 1; text-align: center; font-size: 9px; font-weight: 700; padding: 6px 2px; border-radius: 999px; color: var(--muted); white-space: nowrap; letter-spacing: -.01em; }
-.mini-tab.on { background: var(--ink); color: #fff; }
+/* La app usa pastillas SUELTAS con hueco (flex-auto, ancho segun el texto), no
+   un carril segmentado de anchos iguales — ver GroupView.tsx. */
+.mini-tabs { display: flex; gap: 4px; margin: 6px 0 10px; }
+.mini-tab { flex: auto; text-align: center; font-size: 9px; font-weight: 700; padding: 6px 5px; border-radius: 999px; color: var(--muted); white-space: nowrap; letter-spacing: -.01em; background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(255, 255, 255, 0.7); }
+.mini-tab.on { background: var(--ink); color: #fff; border-color: var(--ink); }
 .ach-prow { display: flex; align-items: center; gap: 9px; padding: 6px 0; }
 .ach-info { flex: 1; font-size: 13px; font-weight: 600; }
 .ach-info .muted { font-size: 10.5px; font-weight: 400; }
