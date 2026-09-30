@@ -9,3 +9,10 @@ dist-ssr
 
 # capturas intermedias del generador de screenshots
 .screenshots/
+
+# Vídeos: la escena generada y los frames intermedios no se versionan
+scripts/video/scene-*.mp4
+scripts/video/ov/
+scripts/video/vo/
+scripts/video/*.wav
+scripts/video/settlia-ad-*.mp4
