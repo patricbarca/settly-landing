@@ -41,6 +41,16 @@ garabatos y arruina la toma.
 - **La voz es una pista GUÍA** (espeak-ng): solo fija los tiempos. Para publicar,
   grabar o usar un TTS decente y pasarlo como 2º argumento de `assemble.sh` — el
   montaje no cambia.
+- **`edge-tts` NO corre en el contenedor de Claude.** Habla por WebSocket
+  (`wss://speech.platform.bing.com`) y el proxy de egress **no soporta upgrades a
+  WebSocket**: el TLS se resuelve añadiendo el CA del proxy a `certifi`, pero el
+  handshake acaba en 403. `vo_edge.py` está pensado para correrlo **en local**
+  (`pip install edge-tts && python3 vo_edge.py`), commitear el `.wav` y montar.
+  Un TTS por **REST** (ElevenLabs, OpenAI, Azure) sí funcionaría desde el
+  contenedor, porque es HTTPS normal contra el 443.
+- **Licencia:** `edge-tts` usa un endpoint no documentado de Microsoft pensado
+  para el "Read aloud" del navegador Edge. Para un anuncio comercial conviene
+  verificar los términos, o tirar de un TTS con licencia explícita.
 - `vo.py` **avisa si dos líneas se solapan**; hacer caso al aviso.
 - Las capturas de `assets/flow/` son de **página completa** (scroll interno), no
   del viewport. `render_ad.py` recorta 640×1385 (390×844 escalado) y el parámetro
