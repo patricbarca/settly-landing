@@ -20,8 +20,10 @@ TOTAL = 23.0
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--voice", default="en-US-AriaNeural")
-ap.add_argument("--rate", default="+0%", help='p. ej. "+8%" si una linea se pasa de largo')
+ap.add_argument("--rate", default="+0%", help='p. ej. "+8%%" si una linea se pasa de largo')
 ap.add_argument("--out", default=os.path.join(D, "vo-edge.wav"))
+ap.add_argument("--raw", action="store_true",
+                help="solo genera los 6 mp3 y NO mezcla: asi no hace falta ffmpeg en tu maquina")
 a = ap.parse_args()
 
 lines = json.load(open(os.path.join(D, "script.json")))
@@ -32,11 +34,18 @@ for i, ln in enumerate(lines):
     mp3 = os.path.join(tmp, f"{i}.mp3")
     subprocess.run(["edge-tts", "--voice", a.voice, "--rate", a.rate,
                     "--text", ln["text"], "--write-media", mp3], check=True)
-    dur = float(subprocess.run(
-        ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", mp3],
-        capture_output=True, text=True).stdout.strip())
+    dur = 0.0
+    if not a.raw:
+        dur = float(subprocess.run(
+            ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", mp3],
+            capture_output=True, text=True).stdout.strip())
     parts.append((ln["t"], mp3, dur))
-    print(f'{ln["t"]:5.2f}s +{dur:4.2f}s  {ln["text"]}')
+    print(f'{ln["t"]:5.2f}s +{dur:4.2f}s  {ln["text"]}' if dur else f'{ln["t"]:5.2f}s  {ln["text"]}')
+
+if a.raw:
+    print(f"\nListos los {len(parts)} audios en: {tmp}")
+    print("Commitea esa carpeta y Claude hace la mezcla.")
+    sys.exit(0)
 
 # El aviso que importa: una linea que invade la siguiente se oye como atropello.
 bad = False
