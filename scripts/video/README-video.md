@@ -49,6 +49,9 @@ garabatos y arruina la toma.
   IPs de centros de datos**. Comprobado con edge-tts 7.2.8 y 6.1.12 (esta ni
   manda `Sec-MS-GEC`): mismo 403, y el reloj del contenedor era correcto.
   → Desde tu Mac (o una sesión local de Claude Code) funciona sin tocar nada.
+    **Confirmado por el usuario (2026-09-30):** ya le había funcionado solo, y
+    era una sesión LOCAL. Si alguien dice "pero si esto ya funcionó", la
+    pregunta correcta es en qué máquina corría la sesión, no qué falla aquí.
   → Desde la nube hace falta un TTS por **REST** (ElevenLabs, OpenAI, Azure),
     que sí pasa porque es HTTPS normal contra el 443.
 - **Licencia:** `edge-tts` usa un endpoint no documentado de Microsoft pensado
