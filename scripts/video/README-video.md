@@ -41,13 +41,16 @@ garabatos y arruina la toma.
 - **La voz es una pista GUÍA** (espeak-ng): solo fija los tiempos. Para publicar,
   grabar o usar un TTS decente y pasarlo como 2º argumento de `assemble.sh` — el
   montaje no cambia.
-- **`edge-tts` NO corre en el contenedor de Claude.** Habla por WebSocket
-  (`wss://speech.platform.bing.com`) y el proxy de egress **no soporta upgrades a
-  WebSocket**: el TLS se resuelve añadiendo el CA del proxy a `certifi`, pero el
-  handshake acaba en 403. `vo_edge.py` está pensado para correrlo **en local**
-  (`pip install edge-tts && python3 vo_edge.py`), commitear el `.wav` y montar.
-  Un TTS por **REST** (ElevenLabs, OpenAI, Azure) sí funcionaría desde el
-  contenedor, porque es HTTPS normal contra el 443.
+- **`edge-tts` NO corre en una sesión CLOUD de Claude; en una sesión LOCAL sí.**
+  El motivo NO es el proxy (primer diagnóstico, equivocado): el túnel a
+  `speech.platform.bing.com` se establece y el TLS se completa — basta con añadir
+  el CA del proxy a `certifi`. Es **Microsoft** quien devuelve **403** en el
+  handshake, porque ese endpoint es el del "Read aloud" de Edge y **rechaza las
+  IPs de centros de datos**. Comprobado con edge-tts 7.2.8 y 6.1.12 (esta ni
+  manda `Sec-MS-GEC`): mismo 403, y el reloj del contenedor era correcto.
+  → Desde tu Mac (o una sesión local de Claude Code) funciona sin tocar nada.
+  → Desde la nube hace falta un TTS por **REST** (ElevenLabs, OpenAI, Azure),
+    que sí pasa porque es HTTPS normal contra el 443.
 - **Licencia:** `edge-tts` usa un endpoint no documentado de Microsoft pensado
   para el "Read aloud" del navegador Edge. Para un anuncio comercial conviene
   verificar los términos, o tirar de un TTS con licencia explícita.
