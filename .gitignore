@@ -16,3 +16,7 @@ scripts/video/ov/
 scripts/video/vo/
 scripts/video/*.wav
 scripts/video/settlia-ad-*.mp4
+
+# Instagram: fotos generadas y salidas no se versionan
+scripts/instagram/*.jpg
+scripts/instagram/*.png
