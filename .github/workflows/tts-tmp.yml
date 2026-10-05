@@ -1,0 +1,32 @@
+# TEMPORAL: genera la voz en off del video de marketing con edge-tts y la sube a esta rama.
+# Se borra cuando los audios esten descargados.
+name: tts-tmp
+on:
+  push:
+    branches: [claude/admiring-ride-z5bqpw]
+    paths: [.github/workflows/tts-tmp.yml]
+permissions:
+  contents: write
+jobs:
+  tts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install edge-tts
+      - name: Generate voiceover
+        run: |
+          V=en-US-AvaNeural
+          cd tts-tmp
+          edge-tts -v $V --rate=+5% -t "When the bill hits the table... and nobody remembers who had what." --write-media 1.mp3
+          edge-tts -v $V --rate=+5% -t "Not today." --write-media 2.mp3
+          edge-tts -v $V --rate=+5% -t "Snap the receipt. Settlia reads every line, and everyone ticks what they ate." --write-media 3.mp3
+          edge-tts -v $V --rate=+5% -t "Everyone pays exactly their share." --write-media 4.mp3
+          edge-tts -v $V --rate=+5% -t "Settlia. Split the bill, not the friendship." --write-media 5.mp3
+          ls -la
+      - name: Commit audio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898289+github-actions[bot]@users.noreply.github.com"
+          git add tts-tmp/*.mp3
+          git commit -m "tts-tmp: voiceover audio (temporal)"
+          git push
