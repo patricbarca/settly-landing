@@ -40,6 +40,8 @@ export GEMINI_API_KEY=...            # secreto del entorno, nunca en el repo
 python3 gen_image.py "<escena>" foto.png 2K   # añade solo las reglas "sin texto"
 python3 render.py posts.json                  # titular + subtítulo + marca
 ```
-- `render.py` es la versión genérica de `posts.py` (spec en JSON: `top` = degradado, `blur` = cajas a difuminar).
+- `render.py` es la versión genérica de `posts.py` (spec en JSON: `top` = degradado, `blur` = cajas a difuminar, `patch` = rellenar un logo sobre superficie lisa con el color de alrededor).
 - Revisar SIEMPRE cada foto a tamaño completo: el modelo cuela marcas (p. ej. "SUBARU" en un coche) → `blur`.
+- **No pedir "top third uncluttered"**: el modelo pega un panel aparte arriba (corte recto visible). Pedir "one single continuous photograph" y describir el fondo de arriba.
+- Pedir "only hands, nobody's head or face": "no faces" a secas no basta (salió gente de cuerpo entero).
 - No poner marcas registradas en los titulares de anuncios de pago (p. ej. "Airbnb").

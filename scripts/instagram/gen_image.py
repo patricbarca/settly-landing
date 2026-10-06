@@ -7,9 +7,13 @@ MODEL = os.environ.get("GEMINI_IMAGE_MODEL", "gemini-3.1-flash-image-preview")
 KEY = os.environ.get("GEMINI_API_KEY", "").strip()  # .trim(): un newline pegado rompe la clave
 
 # Toda foto lleva estas reglas: el texto lo dibuja render.py, nunca el modelo.
-RULES = (" No text, no letters, no numbers, no logos, no brand names, no signs, "
-         "no labels anywhere in the image. No recognisable faces. "
-         "The top third of the frame is calm and uncluttered to leave room for a headline.")
+# ⚠️ NO pedir "el tercio superior despejado": Nano Banana lo interpreta literal y pega un
+# panel aparte arriba (collage con corte recto). Pedir una sola foto continua y describir
+# qué hay arriba (cielo, pared desenfocada); el degradado de render.py hace el resto.
+RULES = (" One single continuous photograph: not a collage, no split panels, no borders."
+         " Only hands and forearms, nobody's head or face in frame."
+         " No text, no letters, no numbers, no logos, no brand names, no signs,"
+         " no labels anywhere in the image.")
 
 def generate(prompt, out, size="2K"):
     if not KEY:

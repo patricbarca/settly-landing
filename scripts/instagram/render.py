@@ -47,6 +47,13 @@ def render(spec, base):
     logo = Image.open(LOGO).convert("RGBA")
     for p in spec:
         im = fit(os.path.join(base, p["src"]))
+        for box in p.get("patch", []):
+            # Rellena con el color medio de una franja justo encima de la caja: tapa un logo
+            # sobre una superficie lisa (p. ej. la marca de una nevera) sin dejar mancha.
+            x0, y0, x1, y1 = box
+            ref = im.crop((x0, y0 - 12, x1, y0 - 2)).convert("RGB").resize((1, 1), Image.BOX)
+            im.paste(ref.getpixel((0, 0)) + (255,), (x0, y0, x1, y1))
+            im.paste(im.crop((x0-6, y0-6, x1+6, y1+6)).filter(ImageFilter.GaussianBlur(4)), (x0-6, y0-6))
         for box in p.get("blur", []):
             box = tuple(box)
             im.paste(im.crop(box).filter(ImageFilter.GaussianBlur(9)), box[:2])
