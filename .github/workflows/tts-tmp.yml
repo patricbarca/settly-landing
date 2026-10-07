@@ -15,9 +15,12 @@ jobs:
       - name: Transcribe
         run: |
           python3 - <<'PY'
+          import wave, numpy as np
           from faster_whisper import WhisperModel
+          w = wave.open("tts-tmp/ugc.wav")
+          audio = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768.0
           m = WhisperModel("small.en", device="cpu", compute_type="int8")
-          segs, _ = m.transcribe("tts-tmp/ugc.wav", word_timestamps=True, language="en")
+          segs, _ = m.transcribe(audio, word_timestamps=True, language="en")
           with open("tts-tmp/ugc_words.tsv", "w") as f:
               for s in segs:
                   for w in s.words:
