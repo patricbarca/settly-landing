@@ -1,0 +1,33 @@
+# TEMPORAL: transcribe el audio del video de marketing (subtitulos). Se borra al terminar.
+name: tts-tmp
+on:
+  push:
+    branches: [claude/admiring-ride-z5bqpw]
+    paths: [.github/workflows/tts-tmp.yml]
+permissions:
+  contents: write
+jobs:
+  stt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install faster-whisper
+      - name: Transcribe
+        run: |
+          python3 - <<'PY'
+          from faster_whisper import WhisperModel
+          m = WhisperModel("small.en", device="cpu", compute_type="int8")
+          segs, _ = m.transcribe("tts-tmp/ugc.wav", word_timestamps=True, language="en")
+          with open("tts-tmp/ugc_words.tsv", "w") as f:
+              for s in segs:
+                  for w in s.words:
+                      f.write(f"{w.start:.2f}\t{w.end:.2f}\t{w.word.strip()}\n")
+          PY
+          cat tts-tmp/ugc_words.tsv
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898289+github-actions[bot]@users.noreply.github.com"
+          git add tts-tmp/ugc_words.tsv
+          git commit -m "tts-tmp: transcript (temporal)"
+          git push
