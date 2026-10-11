@@ -33,6 +33,9 @@ letters, no numbers, no logos", y **el tercio superior despejado** para el titul
   y opacidad del degradado por post (el del vino va a 900 px / 252).
 - Las fotos y los JPG de salida **no se versionan** (se regeneran).
 
+## Posts gráficos (sin foto, gratis)
+`python3 graphic.py <carpeta>` → post-chat, post-maths, post-paid. Fondo = gradiente del hero + halos teal/índigo. Úsalos cuando no haya créditos de imagen. Baloo 2 no tiene `✓`: se dibuja con `check()`.
+
 ## Rutina diaria (3 posts/día) — Nano Banana 2 directo con Google
 Más barato que vía Kling (15 créditos ≈ $0.23/imagen → ~$0.07–0.10 directo, estimado).
 ```bash
