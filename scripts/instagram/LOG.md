@@ -16,3 +16,4 @@ Una línea por post. La rutina diaria lo lee para NO repetir tema y añade el su
 | 2026-10-11 | post-paid.jpg | gráfico | "Wait… did I already pay you?" | registro de pagos |
 | 2026-10-13 | post-simplify.jpg | gráfico | (prueba de la rutina) | saldos simplificados |
 | 2026-10-13 | post-rent.jpg | gráfico | (prueba de la rutina) | alquiler compartido |
+| 2026-10-15 | (rutina, foto Gemini) | foto | Who bought the Cup Day nibbles? | Melbourne Cup, comida de grupo |
