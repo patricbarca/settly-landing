@@ -14,6 +14,7 @@ await p.evaluate(() => {
   localStorage.setItem('settly.onboarded', '1');
   localStorage.setItem('settly.lang', 'en');
   localStorage.setItem('settly.theme', 'dark');
+  sessionStorage.setItem('settlia.heroIntro', '1');
 });
 await p.reload({ waitUntil: 'domcontentloaded' });
 await p.waitForTimeout(4000);
@@ -21,7 +22,7 @@ await p.evaluate(() => window.__auth.signInGuest());
 await p.waitForTimeout(2000);
 await p.addStyleTag({ content: '*,*::before,*::after{animation:none !important;transition:none !important}' });
 
-const NAV = '.fixed.bottom-0';
+const NAV = 'nav.fixed';
 const hideChrome = () => p.evaluate((nav) => {
   // pie de modo invitado: solo existe en guest, un usuario con cuenta no lo ve
   const re = /Reset demo|data is saved in this browser/i;
@@ -30,6 +31,8 @@ const hideChrome = () => p.evaluate((nav) => {
   // la barra inferior va FIJA en la app: se captura aparte y se fija en el marco,
   // si no, en un scroll animado subiria con el contenido y mentiria.
   const n = document.querySelector(nav); if (n) n.style.display = 'none';
+  // el boton + flotante de añadir gasto tampoco se desplaza con el contenido
+  document.querySelectorAll('.fixed.inset-x-3').forEach(e => { if (e !== n) e.style.display = 'none'; });
 }, NAV);
 
 const VH = 844;
@@ -60,9 +63,21 @@ const shot = async (name) => {
 
 // la barra inferior, una sola vez y en su estado normal
 await p.evaluate((nav) => { const n = document.querySelector(nav); if (n) n.style.display = ''; }, NAV);
-await p.locator(NAV).first().screenshot({ path: `${OUT}/nav.png` });
+// La barra es una pildora flotante: se captura a lo ancho de la pantalla con
+// fondo TRANSPARENTE (el resto de la pagina oculto) para superponerla tal cual.
+const navBox = await p.locator(NAV).first().boundingBox();
+await p.addStyleTag({ content: 'html.navshot,html.navshot body,html.navshot #root{background:transparent !important} html.navshot body::before{display:none !important} html.navshot #root > *:not(nav){visibility:hidden !important} html.navshot nav.fixed, html.navshot nav.fixed *{visibility:visible !important}' });
+await p.evaluate(() => document.documentElement.classList.add('navshot'));
+await p.screenshot({ path: `${OUT}/nav.png`, omitBackground: true, clip: { x: 0, y: navBox.y - 6, width: 390, height: navBox.height + 12 } });
+await p.evaluate(() => document.documentElement.classList.remove('navshot'));
 console.log('  -> nav');
 
+// fuera lo que solo ve un usuario recien llegado (instalar / primeros pasos)
+await p.evaluate(() => {
+  for (const b of document.querySelectorAll('button')) if (/^\s*Install app\s*$/.test(b.textContent || '')) b.remove();
+  const h = [...document.querySelectorAll('*')].find(e => /^Getting started$/i.test((e.textContent || '').trim()));
+  if (h) h.parentElement.remove();
+});
 await shot('01-home');
 await p.evaluate((nav) => { const n = document.querySelector(nav); if (n) n.style.display = ''; }, NAV);
 await p.getByText('Lisbon trip').first().click();
@@ -75,7 +90,7 @@ const openTab = async (tab) => {
   await p.evaluate((nav) => { const n = document.querySelector(nav); if (n) n.style.display = ''; }, NAV);
   await p.evaluate(() => window.scrollTo(0, 0));
   await p.waitForTimeout(300);
-  await p.getByRole('button', { name: tab, exact: true }).first().click();
+  await p.getByRole('tab', { name: tab, exact: true }).first().click();
   await p.waitForTimeout(900);
 };
 await openTab('Balances');  await shot('03-balances');
