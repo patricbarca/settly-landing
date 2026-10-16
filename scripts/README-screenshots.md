@@ -116,3 +116,22 @@ Detalles que importan:
 - Idioma **inglés** y tema **oscuro**, para que casen entre ellas.
 - Si se añade o quita una captura, actualizar **los `dot` del slideshow** en
   `index.html` (hay uno por slide) y recalcular `--scroll-dur`/`data-ms`.
+
+## Ronda 2026-10-16: grupos de viaje con imagen
+
+- Semilla temporal: 4 grupos de viaje (Lisbon trip, Japan 2026, Santorini,
+  Mexico road trip), **todos en EUR** (las pastillas del saldo global no
+  convierten monedas: con JPY salía un total absurdo). En Lisbon los miembros
+  son Alex (yo), Emma, Liam, Olivia y Noah, que son los nombres que usa
+  `capture-flows.mjs`.
+- Cada grupo lleva `heroImage` apuntando a `/tmp-hero/<pais>.jpg`, copiado
+  **temporalmente** en `public/tmp-hero/` de la app. Son ilustraciones planas
+  dibujadas en SVG (no fotos: el sandbox no llega a bancos de imágenes).
+  Borrar `public/tmp-hero/` al terminar.
+- Cambios de UI que obligaron a tocar los scripts: la barra inferior es una
+  pastilla flotante (`nav.fixed`, se captura con fondo transparente), añadir
+  gasto vive plegado en un **+** flotante (`aria-label="Add an Expense"`), las
+  pestañas son `role="tab"` y la intro de Home se salta con
+  `sessionStorage settlia.heroIntro`.
+- Duraciones del scroll: `--scroll-dur = (alto_webp − 1290) / 281.5` s y
+  `data-ms = dur·1000 + 2200`.

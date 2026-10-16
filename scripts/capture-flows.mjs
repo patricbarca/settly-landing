@@ -47,6 +47,7 @@ await p.evaluate(() => {
   localStorage.setItem('settly.onboarded', '1');
   localStorage.setItem('settly.lang', 'en');
   localStorage.setItem('settly.theme', 'dark');
+  sessionStorage.setItem('settlia.heroIntro', '1');
   localStorage.setItem('settly.aiConsent', '1');
 });
 await p.reload({ waitUntil: 'domcontentloaded' });
@@ -55,7 +56,7 @@ await p.evaluate(() => window.__auth.signInGuest());
 await p.waitForTimeout(2000);
 await p.addStyleTag({ content: '*,*::before,*::after{animation:none !important;transition:none !important}' });
 
-const NAV = '.fixed.bottom-0', VH = 844, CAP = 2600;
+const NAV = 'nav.fixed', VH = 844, CAP = 2600;
 const hideChrome = () => p.evaluate((nav) => {
   const re = /Reset demo|data is saved in this browser/i;
   const hits = [...document.querySelectorAll('div,p,footer,small')].filter(e => re.test(e.textContent || ''));
@@ -101,6 +102,9 @@ try { const l = p.getByRole('button', { name: /^Later$/ }); if (await l.count())
 await p.waitForTimeout(400);
 
 // ================= FLUJO A: escanear un ticket =================
+// añadir gasto vive plegado en un + flotante: abrirlo primero
+await p.locator('[aria-label="Add an Expense"]').first().click();
+await p.waitForTimeout(700);
 await p.getByRole('button', { name: /^Scan/ }).first().click();
 await p.waitForTimeout(900);
 const fileInputs = p.locator('input[type=file]');
@@ -162,6 +166,8 @@ try { await p.getByText('Dinner at Tasca do Mar').first().click(); await p.waitF
 await p.evaluate(() => window.scrollTo(0, 0));
 await p.waitForTimeout(400);
 
+await p.locator('[aria-label="Add an Expense"]').first().click().catch(() => {});
+await p.waitForTimeout(700);
 const box = p.getByPlaceholder(/coffee 12 with Ana/i).first();
 await box.click();
 await box.type('Taxi to the airport 32, Emma paid, split with Liam and me', { delay: 18 });
