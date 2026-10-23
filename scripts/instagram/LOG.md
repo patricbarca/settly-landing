@@ -17,3 +17,4 @@ Una línea por post. La rutina diaria lo lee para NO repetir tema y añade el su
 | 2026-10-13 | post-simplify.jpg | gráfico | (prueba de la rutina) | saldos simplificados |
 | 2026-10-13 | post-rent.jpg | gráfico | (prueba de la rutina) | alquiler compartido |
 | 2026-10-15 | (rutina, foto Gemini) | foto | Who bought the Cup Day nibbles? | Melbourne Cup, comida de grupo |
+| 2026-10-23 | post-halloween.jpg | foto (Gemini) | Who bought the Halloween lollies? | fiesta de Halloween, dulces compartidos |
