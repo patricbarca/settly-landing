@@ -1,0 +1,789 @@
+{
+ "checkedAt": "2026-10-24T05:49:11.854Z",
+ "results": [
+  {
+   "id": "app",
+   "name": "App web (app.settlia.app)",
+   "group": "Settlia",
+   "status": "up",
+   "detail": "HTTP 200",
+   "ms": 220
+  },
+  {
+   "id": "landing",
+   "name": "Landing (settlia.app)",
+   "group": "Settlia",
+   "status": "up",
+   "detail": "HTTP 200",
+   "ms": 153
+  },
+  {
+   "id": "sb-auth",
+   "name": "Supabase · login",
+   "group": "Settlia",
+   "status": "up",
+   "detail": "HTTP 200",
+   "ms": 975
+  },
+  {
+   "id": "sb-db",
+   "name": "Supabase · base de datos",
+   "group": "Settlia",
+   "status": "up",
+   "detail": "HTTP 401",
+   "ms": 1156
+  },
+  {
+   "id": "sb-storage",
+   "name": "Supabase · archivos",
+   "group": "Settlia",
+   "status": "up",
+   "detail": "HTTP 200",
+   "ms": 982
+  },
+  {
+   "id": "fn-parse-expense",
+   "name": "Función parse-expense",
+   "group": "Settlia",
+   "status": "up",
+   "detail": "HTTP 200",
+   "ms": 303
+  },
+  {
+   "id": "fn-scan-receipt",
+   "name": "Función scan-receipt",
+   "group": "Settlia",
+   "status": "up",
+   "detail": "HTTP 200",
+   "ms": 301
+  },
+  {
+   "id": "fn-transcribe",
+   "name": "Función transcribe",
+   "group": "Settlia",
+   "status": "up",
+   "detail": "HTTP 200",
+   "ms": 272
+  },
+  {
+   "id": "fn-send-push",
+   "name": "Función send-push",
+   "group": "Settlia",
+   "status": "up",
+   "detail": "HTTP 200",
+   "ms": 436
+  },
+  {
+   "id": "fn-forecast-spending",
+   "name": "Función forecast-spending",
+   "group": "Settlia",
+   "status": "up",
+   "detail": "HTTP 200",
+   "ms": 270
+  },
+  {
+   "id": "fn-convert-currency",
+   "name": "Función convert-currency",
+   "group": "Settlia",
+   "status": "up",
+   "detail": "HTTP 200",
+   "ms": 262
+  },
+  {
+   "id": "groq-models",
+   "name": "Modelos de IA en Groq",
+   "group": "Settlia",
+   "status": "unknown",
+   "detail": "Falta el secreto GROQ_API_KEY en GitHub"
+  },
+  {
+   "id": "supabase",
+   "name": "Supabase",
+   "group": "Proveedores",
+   "page": "https://status.supabase.com",
+   "status": "up",
+   "detail": "Sin incidencias",
+   "incidents": [
+    {
+     "name": "Elevated Mgmt API Error Rates in Multiple Regions",
+     "status": "monitoring"
+    }
+   ]
+  },
+  {
+   "id": "groq",
+   "name": "Groq (IA de texto, voz y tickets)",
+   "group": "Proveedores",
+   "page": "https://groqstatus.com",
+   "status": "up",
+   "detail": "Sin incidencias",
+   "incidents": []
+  },
+  {
+   "id": "openrouter",
+   "name": "OpenRouter (respaldo del escáner)",
+   "group": "Proveedores",
+   "status": "up",
+   "detail": "HTTP 200",
+   "ms": 190
+  },
+  {
+   "id": "revenuecat",
+   "name": "RevenueCat (compras en iOS)",
+   "group": "Proveedores",
+   "page": "https://status.revenuecat.com",
+   "status": "up",
+   "detail": "Sin incidencias",
+   "incidents": []
+  },
+  {
+   "id": "stripe",
+   "name": "Stripe (pagos web)",
+   "group": "Proveedores",
+   "page": "https://status.stripe.com",
+   "status": "up",
+   "detail": "Sin incidencias",
+   "incidents": []
+  },
+  {
+   "id": "resend",
+   "name": "Resend (emails de login)",
+   "group": "Proveedores",
+   "page": "https://resend-status.com",
+   "status": "up",
+   "detail": "Sin incidencias",
+   "incidents": []
+  },
+  {
+   "id": "github",
+   "name": "GitHub (hosting y CI)",
+   "group": "Proveedores",
+   "page": "https://www.githubstatus.com",
+   "status": "up",
+   "detail": "Sin incidencias",
+   "incidents": []
+  },
+  {
+   "id": "codemagic",
+   "name": "Codemagic (builds iOS)",
+   "group": "Proveedores",
+   "page": "https://status.codemagic.io",
+   "status": "up",
+   "detail": "Sin incidencias",
+   "incidents": []
+  },
+  {
+   "id": "cloudflare",
+   "name": "Cloudflare (analítica)",
+   "group": "Proveedores",
+   "page": "https://www.cloudflarestatus.com",
+   "status": "degraded",
+   "detail": "Partial System Outage",
+   "incidents": []
+  },
+  {
+   "id": "apple",
+   "name": "Apple Developer (App Store Connect, TestFlight, APNs)",
+   "group": "Proveedores",
+   "page": "https://developer.apple.com/system-status/",
+   "status": "up",
+   "detail": "Sin incidencias"
+  }
+ ],
+ "history": {
+  "app": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "up",
+    290
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "up",
+    277
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "up",
+    198
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "up",
+    293
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "up",
+    220
+   ]
+  ],
+  "landing": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "up",
+    185
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "up",
+    191
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "up",
+    141
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "up",
+    209
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "up",
+    153
+   ]
+  ],
+  "sb-auth": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "up",
+    1070
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "up",
+    711
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "up",
+    909
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "up",
+    818
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "up",
+    975
+   ]
+  ],
+  "sb-db": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "up",
+    1358
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "up",
+    743
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "up",
+    1149
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "up",
+    1054
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "up",
+    1156
+   ]
+  ],
+  "sb-storage": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "up",
+    499
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "up",
+    709
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "up",
+    816
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "up",
+    834
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "up",
+    982
+   ]
+  ],
+  "fn-parse-expense": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "up",
+    382
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "up",
+    498
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "up",
+    244
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "up",
+    571
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "up",
+    303
+   ]
+  ],
+  "fn-scan-receipt": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "up",
+    362
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "up",
+    506
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "up",
+    269
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "up",
+    586
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "up",
+    301
+   ]
+  ],
+  "fn-transcribe": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "up",
+    362
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "up",
+    493
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "up",
+    239
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "up",
+    613
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "up",
+    272
+   ]
+  ],
+  "fn-send-push": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "up",
+    584
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "up",
+    860
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "up",
+    384
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "up",
+    1293
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "up",
+    436
+   ]
+  ],
+  "fn-forecast-spending": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "up",
+    405
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "up",
+    490
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "up",
+    246
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "up",
+    567
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "up",
+    270
+   ]
+  ],
+  "fn-convert-currency": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "up",
+    357
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "up",
+    234
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "up",
+    236
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "up",
+    603
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "up",
+    262
+   ]
+  ],
+  "groq-models": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "unknown",
+    null
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "unknown",
+    null
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "unknown",
+    null
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "unknown",
+    null
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "unknown",
+    null
+   ]
+  ],
+  "supabase": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "up",
+    null
+   ]
+  ],
+  "groq": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "up",
+    null
+   ]
+  ],
+  "openrouter": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "unknown",
+    null
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "up",
+    203
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "up",
+    187
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "up",
+    214
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "up",
+    190
+   ]
+  ],
+  "revenuecat": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "up",
+    null
+   ]
+  ],
+  "stripe": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "up",
+    null
+   ]
+  ],
+  "resend": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "up",
+    null
+   ]
+  ],
+  "github": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "up",
+    null
+   ]
+  ],
+  "codemagic": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "up",
+    null
+   ]
+  ],
+  "cloudflare": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "down",
+    null
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "degraded",
+    null
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "degraded",
+    null
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "degraded",
+    null
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "degraded",
+    null
+   ]
+  ],
+  "apple": [
+   [
+    "2026-10-24T05:08:54.968Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:09:50.040Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:23:47.698Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:37:23.295Z",
+    "up",
+    null
+   ],
+   [
+    "2026-10-24T05:49:11.854Z",
+    "up",
+    null
+   ]
+  ]
+ }
+}
