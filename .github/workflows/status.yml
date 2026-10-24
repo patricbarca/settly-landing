@@ -1,0 +1,37 @@
+# Revisa los servicios de Settlia cada 15 minutos y guarda el resultado en la rama
+# `status-data` (un solo commit que se reescribe, así no ensucia el historial de master).
+# La página https://settlia.app/status/ lee ese archivo.
+name: Status check
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: status-check
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Leer el estado anterior
+        run: curl -sf "https://raw.githubusercontent.com/${{ github.repository }}/status-data/status.json?t=$(date +%s)" -o prev.json || echo '{}' > prev.json
+      - name: Revisar servicios
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: node scripts/status-check.mjs prev.json status.json
+      - name: Publicar en la rama status-data
+        run: |
+          mkdir out && cp status.json out/ && cd out
+          git init -q -b status-data
+          git config user.name "status-bot"
+          git config user.email "status-bot@users.noreply.github.com"
+          git add status.json
+          git commit -qm "status $(date -u +%FT%TZ)"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" status-data
