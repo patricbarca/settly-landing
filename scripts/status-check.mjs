@@ -39,7 +39,7 @@ function own(id, name, group, url, { opts, ok = (r) => r.status < 400, slow = 30
 }
 
 // Página de estado pública con formato Atlassian Statuspage (/api/v2/summary.json).
-function statuspage(id, name, base, page) {
+function statuspage(id, name, base, page, { cap } = {}) {
   return async () => {
     const r = { id, name, group: "Proveedores", page };
     try {
@@ -47,9 +47,10 @@ function statuspage(id, name, base, page) {
       if (!res.ok) return { ...r, status: "unknown", detail: `Sin datos (HTTP ${res.status})` };
       const j = JSON.parse(body);
       const ind = j.status?.indicator ?? "none";
-      const status = ind === "none" ? "up" : ind === "minor" ? "degraded" : ind === "maintenance" ? "degraded" : "down";
+      let status = ind === "none" ? "up" : ind === "minor" || ind === "maintenance" ? "degraded" : "down";
+      if (cap && status === "down") status = cap; // servicio no crítico: como mucho "con problemas"
       const incidents = (j.incidents || []).slice(0, 3).map((i) => ({ name: i.name, status: i.status, url: i.shortlink }));
-      return { ...r, status, detail: j.status?.description || ind, incidents };
+      return { ...r, status, detail: ind === "none" ? "Sin incidencias" : j.status?.description || ind, incidents };
     } catch (e) {
       return { ...r, status: "unknown", detail: "No se pudo leer su página de estado" };
     }
@@ -104,7 +105,7 @@ const checks = [
   own("app", "App web (app.settlia.app)", "Settlia", "https://app.settlia.app/"),
   own("landing", "Landing (settlia.app)", "Settlia", "https://settlia.app/"),
   own("sb-auth", "Supabase · login", "Settlia", `${SB}/auth/v1/health`, { opts: { headers: sbHeaders } }),
-  own("sb-db", "Supabase · base de datos", "Settlia", `${SB}/rest/v1/groups?select=id&limit=1`, { opts: { headers: sbHeaders }, ok: (r) => r.status < 500 }),
+  own("sb-db", "Supabase · base de datos", "Settlia", `${SB}/rest/v1/groups?select=id&limit=1`, { opts: { headers: sbHeaders }, ok: (r) => r.status < 500, slow: 4000 }),
   own("sb-storage", "Supabase · archivos", "Settlia", `${SB}/storage/v1/status`, { opts: { headers: sbHeaders }, ok: (r) => r.status < 500 }),
   fn("parse-expense"),
   fn("scan-receipt"),
@@ -115,13 +116,13 @@ const checks = [
   groqModels(),
   statuspage("supabase", "Supabase", "https://status.supabase.com", "https://status.supabase.com"),
   statuspage("groq", "Groq (IA de texto, voz y tickets)", "https://groqstatus.com", "https://groqstatus.com"),
-  statuspage("openrouter", "OpenRouter (respaldo del escáner)", "https://status.openrouter.ai", "https://status.openrouter.ai"),
+  own("openrouter", "OpenRouter (respaldo del escáner)", "Proveedores", "https://openrouter.ai/api/v1/models"),
   statuspage("revenuecat", "RevenueCat (compras en iOS)", "https://status.revenuecat.com", "https://status.revenuecat.com"),
   statuspage("stripe", "Stripe (pagos web)", "https://www.stripestatus.com", "https://status.stripe.com"),
   statuspage("resend", "Resend (emails de login)", "https://resend-status.com", "https://resend-status.com"),
   statuspage("github", "GitHub (hosting y CI)", "https://www.githubstatus.com", "https://www.githubstatus.com"),
   statuspage("codemagic", "Codemagic (builds iOS)", "https://status.codemagic.io", "https://status.codemagic.io"),
-  statuspage("cloudflare", "Cloudflare (analítica)", "https://www.cloudflarestatus.com", "https://www.cloudflarestatus.com"),
+  statuspage("cloudflare", "Cloudflare (analítica)", "https://www.cloudflarestatus.com", "https://www.cloudflarestatus.com", { cap: "degraded" }),
   apple(),
 ];
 
