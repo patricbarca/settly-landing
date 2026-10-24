@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Estado de Settlia</title>
+<link rel="icon" href="/favicon.ico">
+<style>
+:root {
+  --bg: #f4f6f9; --card: #ffffff; --ink: #191b22; --muted: #6b6f7a; --line: #e4e7ec;
+  --up: #12a37a; --deg: #e8920c; --down: #e5484d; --unk: #9aa0ab; --brand: #0FA3A3;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0d1117; --card: #161b22; --ink: #e8eaed; --muted: #9aa3ae; --line: #262d36; --unk: #5d6672; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 760px; margin: 0 auto; padding: 28px 16px 60px; }
+header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+header img { width: 36px; height: 36px; border-radius: 9px; }
+h1 { font-size: 22px; margin: 0; }
+.sub { color: var(--muted); font-size: 13px; }
+.banner { border-radius: 16px; padding: 16px 18px; color: #fff; font-weight: 600; font-size: 17px; margin-bottom: 22px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: center; }
+.banner small { font-weight: 400; opacity: .9; font-size: 13px; }
+.banner.up { background: var(--up); } .banner.degraded { background: var(--deg); } .banner.down { background: var(--down); } .banner.unknown { background: var(--unk); }
+h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 26px 0 8px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.row { padding: 12px 16px; border-top: 1px solid var(--line); }
+.row:first-child { border-top: 0; }
+.top { display: flex; align-items: center; gap: 10px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.dot.up { background: var(--up); } .dot.degraded { background: var(--deg); } .dot.down { background: var(--down); } .dot.unknown { background: var(--unk); }
+.name { font-weight: 600; flex: 1; min-width: 0; }
+.name a { color: inherit; text-decoration: none; } .name a:hover { text-decoration: underline; }
+.st { font-size: 13px; color: var(--muted); white-space: nowrap; }
+.detail { font-size: 13px; color: var(--muted); margin: 2px 0 0 20px; overflow-wrap: anywhere; }
+.inc { font-size: 13px; margin: 4px 0 0 20px; } .inc a { color: var(--deg); }
+.bars { display: flex; gap: 2px; margin: 8px 0 0 20px; height: 18px; }
+.bars span { flex: 1; border-radius: 2px; background: var(--line); }
+.bars .up { background: var(--up); opacity: .75; } .bars .degraded { background: var(--deg); } .bars .down { background: var(--down); } .bars .unknown { background: var(--unk); opacity: .5; }
+.legend { font-size: 12px; color: var(--muted); margin: 4px 0 0 20px; display: flex; justify-content: space-between; }
+.err { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px; color: var(--muted); }
+footer { margin-top: 30px; font-size: 12px; color: var(--muted); }
+footer a { color: var(--brand); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="/assets/logo-s.png" alt="">
+    <div><h1>Estado de Settlia</h1><div class="sub" id="when">Cargando…</div></div>
+  </header>
+  <div id="root"></div>
+  <footer>
+    Se revisa cada 15 minutos desde GitHub Actions; las barras muestran las últimas 24 horas.
+    Consumo de Supabase: <a href="https://supabase.com/dashboard/org/_/usage" target="_blank" rel="noopener">ver uso</a>.
+  </footer>
+</main>
+<script>
+const SRC = "https://raw.githubusercontent.com/patricbarca/settly-landing/status-data/status.json";
+const LABEL = { up: "Funciona", degraded: "Con problemas", down: "Caído", unknown: "Sin datos" };
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+function ago(iso) {
+  const m = Math.round((Date.now() - new Date(iso)) / 60000);
+  return m < 1 ? "hace un momento" : m < 60 ? `hace ${m} min` : `hace ${Math.round(m / 60)} h`;
+}
+function row(r, hist) {
+  const name = r.page ? `<a href="${esc(r.page)}" target="_blank" rel="noopener">${esc(r.name)}</a>` : esc(r.name);
+  const ms = r.ms != null ? ` · ${r.ms} ms` : "";
+  const inc = (r.incidents || []).map((i) => `<div class="inc">⚠ <a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.name)}</a> (${esc(i.status)})</div>`).join("");
+  const h = hist || [];
+  const pad = Array(Math.max(0, 96 - h.length)).fill("<span></span>").join("");
+  const bars = pad + h.map(([t, s]) => `<span class="${s}" title="${new Date(t).toLocaleString()} · ${LABEL[s]}"></span>`).join("");
+  const known = h.filter(([, s]) => s !== "unknown");
+  const pct = known.length ? Math.round((known.filter(([, s]) => s === "up").length / known.length) * 1000) / 10 : null;
+  return `<div class="row"><div class="top"><span class="dot ${r.status}"></span><span class="name">${name}</span><span class="st">${LABEL[r.status]}</span></div>
+    <div class="detail">${esc(r.detail)}${ms}</div>${inc}
+    <div class="bars">${bars}</div>
+    <div class="legend"><span>24 h</span><span>${pct != null ? pct + " % funcionando" : ""}</span><span>ahora</span></div></div>`;
+}
+async function load() {
+  try {
+    const res = await fetch(`${SRC}?t=${Date.now()}`, { cache: "no-store" });
+    if (!res.ok) throw new Error(res.status);
+    const d = await res.json();
+    const rs = d.results;
+    const worst = rs.some((r) => r.status === "down") ? "down" : rs.some((r) => r.status === "degraded") ? "degraded" : "up";
+    const bad = rs.filter((r) => r.status === "down" || r.status === "degraded").length;
+    const title = { up: "Todo funciona", degraded: "Hay servicios con problemas", down: "Hay servicios caídos" }[worst];
+    const stale = Date.now() - new Date(d.checkedAt) > 45 * 60000;
+    let html = `<div class="banner ${stale ? "unknown" : worst}"><span>${stale ? "Datos sin actualizar" : title}</span><small>${bad ? bad + " con incidencias · " : ""}${rs.length} servicios</small></div>`;
+    for (const g of ["Settlia", "Proveedores"]) {
+      const items = rs.filter((r) => r.group === g);
+      if (!items.length) continue;
+      html += `<h2>${g === "Settlia" ? "Settlia (comprobación directa)" : "Proveedores (sus páginas de estado)"}</h2><div class="card">${items.map((r) => row(r, d.history?.[r.id])).join("")}</div>`;
+    }
+    document.getElementById("root").innerHTML = html;
+    document.getElementById("when").textContent = `Última revisión ${ago(d.checkedAt)} · ${new Date(d.checkedAt).toLocaleString()}`;
+  } catch (e) {
+    document.getElementById("root").innerHTML = `<div class="err">Todavía no hay datos. La primera revisión aparece unos minutos después de activar la tarea en GitHub Actions.</div>`;
+    document.getElementById("when").textContent = "";
+  }
+}
+load();
+setInterval(load, 60000);
+</script>
+</body>
+</html>
