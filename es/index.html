@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Settlia — app para dividir gastos en grupo y controlar tus gastos</title>
+<meta content="Divide gastos de viajes, pisos y cenas en segundos: escríbelo, dilo o escanea el ticket y la IA lo reparte. Y controla tus gastos personales en privado. Gratis." name="description"/>
+<link href="https://settlia.app/es/" rel="canonical"/>
+<meta content="#241c53" name="theme-color"/>
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/assets/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="/assets/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+<!-- Open Graph -->
+<meta content="website" property="og:type"/>
+<meta content="Settlia" property="og:site_name"/>
+<meta content="Settlia — gastos en grupo, sin líos" property="og:title"/>
+<meta content="Divide gastos de viajes, pisos y cenas en segundos: escríbelo, dilo o escanea el ticket y la IA lo reparte. Y controla tus gastos personales en privado. Gratis." property="og:description"/>
+<meta content="https://settlia.app/es/" property="og:url"/>
+<meta content="https://settlia.app/assets/og.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Settlia — group expenses, drama-free" property="og:image:alt"/>
+<meta content="es_ES" property="og:locale"/>
+<meta content="en_US" property="og:locale:alternate"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Settlia — app para dividir gastos en grupo y controlar tus gastos" name="twitter:title"/>
+<meta content="Divide gastos de viajes, pisos y cenas en segundos: escríbelo, dilo o escanea el ticket y la IA lo reparte. Y controla tus gastos personales en privado. Gratis." name="twitter:description"/>
+<meta content="https://settlia.app/assets/og.png" name="twitter:image"/>
+<!-- Datos estructurados (JSON-LD) para SEO -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Settlia",
+      "url": "https://settlia.app/"
+    }
+    </script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Settlia",
+      "url": "https://settlia.app/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web, iOS, Android",
+      "description": "AI bill splitter for group expenses. Type, say or scan the receipt and AI splits the bill, assigns each item to each person and tracks who owes who.",
+      "inLanguage": ["en", "es"],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "AUD"
+      }
+    }
+    </script>
+
+<link href="/styles.css" rel="stylesheet"/>
+<!-- Cloudflare Web Analytics -->
+<script data-cf-beacon='{"token": "7a05cca5f23d43cf963830fc26b90c3c"}' defer="" src="https://static.cloudflareinsights.com/beacon.min.js"></script>
+<!-- End Cloudflare Web Analytics -->
+<script defer="" src="/assets/ads.js"></script>
+<link href="https://settlia.app/" hreflang="en" rel="alternate"/><link href="https://settlia.app/es/" hreflang="es" rel="alternate"/><link href="https://settlia.app/" hreflang="x-default" rel="alternate"/></head>
+<body>
+<!-- NAV -->
+<header class="nav">
+<div class="nav-inner">
+<a class="brand" href="#">
+<span class="logo">
+<img alt="Settlia" height="30" src="/assets/logo-s.png" style="display:block;border-radius:7px;background:linear-gradient(145deg,#0f2d54,#0a1a2e);box-shadow:inset 0 1px 0 rgba(255,255,255,0.18),0 2px 8px rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.10);padding:3px" width="30"/>
+</span>
+<span class="brand-name">Settlia</span>
+</a>
+<nav class="nav-links">
+<a href="#features">Funciones</a>
+<a href="#demo">Cómo funciona</a>
+<a href="#pricing">Precios</a>
+<a href="#blog">Blog</a>
+<a href="#faq">FAQ</a>
+<span class="lang-toggle"><a href="/" hreflang="en" onclick="try{localStorage.setItem('settly-landing-lang','en')}catch(e){}">EN</a><a class="on" href="/es/" hreflang="es" onclick="try{localStorage.setItem('settly-landing-lang','es')}catch(e){}">ES</a></span>
+<a class="btn-dark" href="https://app.settlia.app/">Probar Settlia</a>
+</nav>
+</div>
+</header>
+<!-- HERO -->
+<section class="hero-sec">
+<div class="hero-copy">
+<div class="hero-title">
+<h1>Gastos en grupo,<br/>sin líos.</h1>
+<span class="tag-ai">Impulsado por IA</span>
+</div>
+<p class="lead">Se acabó apuntar gastos a mano y calcular quién le debe a quién. Escríbelo, dilo en voz alta o haz una foto al recibo: Settlia lo convierte en un gasto, lo reparte entre tus amigos y deja las cuentas claras en segundos.</p>
+<div class="hero-actions">
+<a class="btn-dark big" href="https://app.settlia.app/">Crear mi primer grupo</a>
+<a class="btn-ghost big" href="#demo">Ver cómo funciona</a>
+</div>
+<div class="store-badges">
+<a aria-label="App Store" class="store-badge" href="https://apps.apple.com/app/settlia/id6787267468" rel="noopener" target="_blank">
+<svg aria-hidden="true" class="sb-ic" fill="currentColor" viewbox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path></svg>
+<span class="sb-tx"><small>Descárgalo en</small><b>App Store</b></span>
+</a>
+<a aria-label="Android" class="store-badge" href="https://app.settlia.app/?utm_source=landing&amp;utm_medium=badge&amp;utm_campaign=android">
+<span class="sb-soon">Web</span>
+<svg aria-hidden="true" class="sb-ic" fill="currentColor" viewbox="0 0 512 512"><path d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"></path></svg>
+<span class="sb-tx"><small>En Android, úsala en</small><b>el navegador</b></span>
+</a>
+</div>
+</div>
+<!-- phone mockup: animated app tour -->
+<div class="phone-wrap" data-slideshow="">
+<div class="phone">
+<!-- Capturas REALES de la app (modo oscuro, ingles), generadas desde
+               la app con datos de demo. Ya no es un mockup dibujado a mano: ese
+               se desincronizaba con cada cambio de UI. Para regenerarlas, ver
+               scripts/README-screenshots.md -->
+<div class="phone-screen shots">
+<div aria-hidden="true" class="phone-status">
+<span class="ps-time">9:41</span>
+<span class="ps-ic">
+<svg viewbox="0 0 18 12"><rect height="4" rx="1" width="3" x="0" y="8"></rect><rect height="7" rx="1" width="3" x="5" y="5"></rect><rect height="9.5" rx="1" width="3" x="10" y="2.5"></rect><rect height="12" rx="1" width="3" x="15" y="0"></rect></svg>
+<svg viewbox="0 0 16 12"><path d="M8 2.4c2.6 0 5 1 6.8 2.7l-1.4 1.5A7.6 7.6 0 0 0 8 4.4 7.6 7.6 0 0 0 2.6 6.6L1.2 5.1A9.6 9.6 0 0 1 8 2.4Zm0 3.6c1.6 0 3 .6 4.1 1.6l-1.5 1.5A3.7 3.7 0 0 0 8 8a3.7 3.7 0 0 0-2.6 1.1L3.9 7.6A5.7 5.7 0 0 1 8 6Zm0 3.4 1.7 1.7-1.7 1.7-1.7-1.7L8 9.4Z"></path></svg>
+<svg class="ps-bat" viewbox="0 0 24 12"><rect fill="none" height="11" rx="3" stroke="#e9eaee" stroke-opacity="0.5" width="20" x="0.5" y="0.5"></rect><rect height="7" rx="1.5" width="14" x="2.5" y="2.5"></rect><rect height="5" rx="1" width="2" x="21.5" y="3.5"></rect></svg>
+</span>
+</div>
+<div class="shot-stage">
+<div class="slide on" data-ms="5100" style="--scroll-dur:2.9s">
+<img alt="Tus grupos, cada uno con su saldo" decoding="async" fetchpriority="high" height="2105" loading="eager" src="/assets/app/01-home.webp" width="640"/>
+</div>
+<div class="slide" data-ms="4100" style="--scroll-dur:1.9s">
+<img alt="Un grupo de viaje y sus gastos, anadidos con IA" decoding="async" height="1817" loading="lazy" src="/assets/app/02-expenses.webp" width="640"/>
+</div>
+<div class="slide" data-ms="7300" style="--scroll-dur:5.1s">
+<img alt="Saldos y quien paga a quien para saldar" decoding="async" height="2727" loading="lazy" src="/assets/app/03-balances.webp" width="640"/>
+</div>
+<div class="slide" data-ms="8800" style="--scroll-dur:6.6s">
+<img alt="Estadisticas: por categoria, por semana y por persona" decoding="async" height="3144" loading="lazy" src="/assets/app/04-stats.webp" width="640"/>
+</div>
+<img alt="" aria-hidden="true" class="shot-nav" decoding="async" height="120" loading="lazy" src="/assets/app/nav.webp" width="640"/>
+</div>
+</div>
+</div>
+<div class="dots">
+<button aria-label="Groups" class="dot on" data-i="0"></button>
+<button aria-label="Expenses" class="dot" data-i="1"></button>
+<button aria-label="Balances" class="dot" data-i="2"></button>
+<button aria-label="Stats" class="dot" data-i="3"></button>
+</div>
+</div>
+</section>
+<!-- DEMO: los dos flujos reales, con capturas de la app -->
+<section class="demo-sec" id="demo">
+<h2 class="sec-title">De la cuenta al reparto, paso a paso</h2>
+<p class="sec-sub">Capturas reales de la app. Tambien puedes dictarlo en voz alta.</p>
+<div class="flows">
+<div class="flow" data-slideshow="">
+<h3 class="flow-title">Haz una foto del ticket</h3>
+<div class="flow-phone">
+<div class="flow-stage">
+<div class="slide on" data-ms="4100" style="--scroll-dur:1.9s">
+<img alt="Haz una foto de la cuenta." decoding="async" height="1817" loading="lazy" src="/assets/flow/a1-reading.webp" width="640"/>
+</div>
+<div class="slide" data-ms="11100" style="--scroll-dur:8.9s">
+<img alt="La IA lee cada linea y su precio." decoding="async" height="3794" loading="lazy" src="/assets/flow/a3-items.webp" width="640"/>
+</div>
+<div class="slide" data-ms="11100" style="--scroll-dur:8.9s">
+<img alt="Marca quien consumio que." decoding="async" height="3794" loading="lazy" src="/assets/flow/a4-assigned.webp" width="640"/>
+</div>
+<div class="slide" data-ms="7600" style="--scroll-dur:5.4s">
+<img alt="Guardado, con la parte de cada uno." decoding="async" height="2821" loading="lazy" src="/assets/flow/a6-saved-detail.webp" width="640"/>
+<img alt="" aria-hidden="true" class="flow-nav" decoding="async" height="120" loading="lazy" src="/assets/app/nav.webp" width="640"/>
+</div>
+</div>
+</div>
+<div class="flow-caps">
+<div class="cap on"><b>1</b><span>Haz una foto de la cuenta.</span></div>
+<div class="cap"><b>2</b><span>La IA lee cada linea y su precio.</span></div>
+<div class="cap"><b>3</b><span>Marca quien consumio que.</span></div>
+<div class="cap"><b>4</b><span>Guardado, con la parte de cada uno.</span></div>
+</div>
+<div class="dots">
+<button aria-label="Take a photo of the bill." class="dot on" data-i="0"></button>
+<button aria-label="AI reads every line and its price." class="dot" data-i="1"></button>
+<button aria-label="Tap who had what." class="dot" data-i="2"></button>
+<button aria-label="Saved, with each person's share." class="dot" data-i="3"></button>
+</div>
+</div>
+<div class="flow" data-slideshow="">
+<h3 class="flow-title">O simplemente escribelo</h3>
+<div class="flow-phone">
+<div class="flow-stage">
+<div class="slide on" data-ms="4400" style="--scroll-dur:2.2s">
+<img alt="Escribelo como lo dirias." decoding="async" height="1917" loading="lazy" src="/assets/flow/b1-prompt.webp" width="640"/>
+<img alt="" aria-hidden="true" class="flow-nav" decoding="async" height="120" loading="lazy" src="/assets/app/nav.webp" width="640"/>
+</div>
+<div class="slide" data-ms="6700" style="--scroll-dur:4.5s">
+<img alt="La IA pone importe, pagador y entre quienes." decoding="async" height="2563" loading="lazy" src="/assets/flow/b2-parsed.webp" width="640"/>
+<img alt="" aria-hidden="true" class="flow-nav" decoding="async" height="120" loading="lazy" src="/assets/app/nav.webp" width="640"/>
+</div>
+<div class="slide" data-ms="4800" style="--scroll-dur:2.6s">
+<img alt="Guardado en el grupo." decoding="async" height="2015" loading="lazy" src="/assets/flow/b3-saved.webp" width="640"/>
+<img alt="" aria-hidden="true" class="flow-nav" decoding="async" height="120" loading="lazy" src="/assets/app/nav.webp" width="640"/>
+</div>
+</div>
+</div>
+<div class="flow-caps">
+<div class="cap on"><b>1</b><span>Escribelo como lo dirias.</span></div>
+<div class="cap"><b>2</b><span>La IA pone importe, pagador y entre quienes.</span></div>
+<div class="cap"><b>3</b><span>Guardado en el grupo.</span></div>
+</div>
+<div class="dots">
+<button aria-label="Write it the way you'd say it." class="dot on" data-i="0"></button>
+<button aria-label="AI fills in amount, payer and who splits." class="dot" data-i="1"></button>
+<button aria-label="Saved to the group." class="dot" data-i="2"></button>
+</div>
+</div>
+</div>
+</section>
+<!-- FEATURES -->
+<section class="feat-sec" id="features">
+<h2 class="sec-title">Todo lo que necesita tu grupo</h2>
+<div class="feat-grid">
+<article class="feat">
+<span class="feat-ic">
+<svg fill="none" height="22" stroke="#5B5BF0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="22"><circle cx="9" cy="8" r="3.2"></circle><path d="M3 20a6 6 0 0 1 12 0"></path><path d="M16 5.2a3 3 0 0 1 0 5.6"></path><path d="M21 20a6 6 0 0 0-4.5-5.8"></path></svg>
+</span>
+<h3>Crea grupos en segundos</h3>
+<p>Un grupo para el viaje, otro para el piso, otro para las cenas. Cada uno con sus cuentas y su divisa.</p>
+</article>
+<article class="feat">
+<span class="feat-ic">
+<svg fill="none" height="22" stroke="#0FA3A3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="22"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7H7l1.3-2h7.4L17 7h2.5A1.5 1.5 0 0 1 21 8.5V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><circle cx="12" cy="12.5" r="3.3"></circle></svg>
+</span>
+<h3>Escanea el recibo</h3>
+<p>Haz una foto y la IA lee los artículos y los precios. Marcas quién consumió cada uno y listo.</p>
+</article>
+<article class="feat">
+<span class="feat-ic">
+<svg fill="none" height="22" stroke="#E8920C" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="22"><rect height="11" rx="3" width="6" x="9" y="3"></rect><path d="M5 11a7 7 0 0 0 14 0"></path><path d="M12 18v3"></path></svg>
+</span>
+<h3>Gasto por voz o texto</h3>
+<p>“Cena con Alexa y Patrick, pagué 90.” Settlia lo interpreta y reparte entre los participantes correctos.</p>
+</article>
+<article class="feat">
+<span class="feat-ic">
+<svg fill="none" height="22" stroke="#0A8B5E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="22"><path d="M12 4v16"></path><path d="M6 7h12l3 5a3 3 0 0 1-6 0zM6 7l-3 5a3 3 0 0 0 6 0z"></path><path d="M8 20h8"></path></svg>
+</span>
+<h3>Verificación y saldos claros</h3>
+<p>Saldos al instante, el mínimo de pagos para saldar, y confirmación de ambas partes al pagar.</p>
+</article>
+</div>
+</section>
+<!-- BLOG -->
+<section class="blog-sec" id="blog">
+<h2 class="sec-title">Del blog</h2>
+<p class="sec-sub">Guías para dividir gastos sin líos.</p>
+<div class="blog-grid">
+<a class="post-card" href="/es/blog/best-expense-splitting-apps.html">
+<span class="post-card-tag" style="--c:#E8920C">Comparativa</span>
+<h3>Mejores apps para dividir gastos y controlar tus gastos (2026)</h3>
+<p>Splitwise, Tricount, Settle Up y Settlia, cara a cara.</p>
+<span class="post-card-more">Leer artículo →</span>
+</a>
+<a class="post-card" href="/es/blog/personal-and-shared-expenses.html">
+<span class="post-card-tag" style="--c:#5B5BF0">Finanzas personales</span>
+<h3>Cómo controlar tus gastos personales y compartidos en una sola app</h3>
+<p>Tu gasto real: lo tuyo + tu parte de cada grupo, en privado.</p>
+<span class="post-card-more">Leer artículo →</span>
+</a>
+<a class="post-card" href="/es/blog/track-spending-bank-statement.html">
+<span class="post-card-tag" style="--c:#0FA3A3">Finanzas personales</span>
+<h3>Cómo controlar tus gastos con el estado de cuenta del banco</h3>
+<p>Categorías, traspasos y duplicados: tu mes claro en minutos.</p>
+<span class="post-card-more">Leer artículo →</span>
+</a>
+<a class="post-card" href="/es/blog/split-expenses-as-a-couple.html">
+<span class="post-card-tag" style="--c:#E11D74">Pareja</span>
+<h3>Cómo dividir los gastos en pareja (sin discutir por dinero)</h3>
+<p>50/50, según el sueldo o bote común — cómo elegir y que sea justo.</p>
+<span class="post-card-more">Leer artículo →</span>
+</a>
+<a class="post-card" href="/es/blog/multi-currency-expenses.html">
+<span class="post-card-tag" style="--c:#0FA3A3">Viajes</span>
+<h3>Cómo dividir gastos en varias monedas en un viaje</h3>
+<p>Convertirlo todo o saldos por moneda — qué es más justo.</p>
+<span class="post-card-more">Leer artículo →</span>
+</a>
+<a class="post-card" href="/es/blog/ask-friends-to-pay-you-back.html">
+<span class="post-card-tag" style="--c:#FF5A4D">Guía</span>
+<h3>Cómo pedir a tus amigos que te devuelvan el dinero (sin que sea incómodo)</h3>
+<p>Frases educadas y un sistema para no tener que perseguir a nadie.</p>
+<span class="post-card-more">Leer artículo →</span>
+</a>
+<a class="post-card" href="/es/blog/tricount-vs-splitwise.html">
+<span class="post-card-tag" style="--c:#0EA5E9">Comparativa</span>
+<h3>Tricount vs Splitwise vs Settlia: qué app usar para dividir gastos en 2026</h3>
+<p>Límites gratis, escaneo de tickets y monedas, comparados con honestidad.</p>
+<span class="post-card-more">Leer artículo →</span>
+</a>
+<a class="post-card" href="/es/blog/split-utility-bills-flatmates.html">
+<span class="post-card-tag" style="--c:#5B5BF0">Piso compartido</span>
+<h3>Cómo dividir las facturas del piso entre compañeros de forma justa</h3>
+<p>Luz, internet y agua — reglas justas y en piloto automático.</p>
+<span class="post-card-more">Leer artículo →</span>
+</a>
+<a class="post-card" href="/es/blog/split-travel-expenses.html">
+<span class="post-card-tag" style="--c:#0FA3A3">Viajes</span>
+<h3>Cómo dividir gastos de viaje sin discutir</h3>
+<p>Un método simple y justo para repartir los costes de un viaje entre amigos.</p>
+<span class="post-card-more">Leer artículo →</span>
+</a>
+<a class="post-card" href="/es/blog/shared-flat-expenses.html">
+<span class="post-card-tag" style="--c:#5B5BF0">Piso compartido</span>
+<h3>Gastos del piso compartido: reparto justo cada mes</h3>
+<p>Alquiler, compra, facturas y la suscripción de siempre: cuentas justas sin hojas de cálculo.</p>
+<span class="post-card-more">Leer artículo →</span>
+</a>
+<a class="post-card" href="/es/blog/split-bills-with-ai.html">
+<span class="post-card-tag" style="--c:#E8920C">IA</span>
+<h3>Dividir cuentas con IA: escanea el ticket o dilo en voz alta</h3>
+<p>Cómo la IA convierte una foto o una frase en un gasto repartido.</p>
+<span class="post-card-more">Leer artículo →</span>
+</a>
+<a class="post-card" href="/es/blog/group-expense-app.html">
+<span class="post-card-tag" style="--c:#FF5A4D">Guía</span>
+<h3>Mejor app para gastos de grupos compartidos (2026)</h3>
+<p>Qué buscar en una app de gastos grupales y por qué Settlia se diferencia.</p>
+<span class="post-card-more">Leer artículo →</span>
+</a>
+<a class="post-card" href="/es/blog/splitwise-alternative.html">
+<span class="post-card-tag" style="--c:#0EA5E9">Comparativa</span>
+<h3>Alternativa a Splitwise: divide cuentas gratis y escaneando el ticket</h3>
+<p>Qué mirar en una alternativa a Splitwise y cómo se compara Settlia.</p>
+<span class="post-card-more">Leer artículo →</span>
+</a>
+<a class="post-card" href="/es/blog/split-restaurant-bill.html">
+<span class="post-card-tag" style="--c:#16A34A">Restaurante</span>
+<h3>Cómo dividir la cuenta del restaurante por lo que pidió cada uno</h3>
+<p>Reparte por ítem, con impuesto y propina, en segundos — sin calculadora.</p>
+<span class="post-card-more">Leer artículo →</span>
+</a>
+</div>
+</section>
+<!-- PRICING -->
+<section class="price-sec" id="pricing">
+<h2 class="sec-title">Precios sencillos</h2>
+<p class="sec-sub">Empieza gratis. Hazte Pro cuando lo necesites. Precios en USD.</p>
+<div class="bill-toggle">
+<button class="bill-opt" data-bill="monthly">Mensual</button>
+<button class="bill-opt on" data-bill="annual">Anual</button>
+<span class="bill-save">Ahorra 28%</span>
+</div>
+<div class="price-grid">
+<!-- Free -->
+<article class="price-card">
+<div class="pc-name">Gratis</div>
+<div class="pc-price"><span class="pc-amount">$0</span></div>
+<div class="pc-sub">Para siempre, sin tarjeta</div>
+<a class="btn-ghost pc-cta" href="https://app.settlia.app/">Empieza gratis</a>
+<ul class="pc-feats">
+<li><svg class="chk" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24" width="17"><path d="M5 12.5l4.5 4.5L19 7"></path></svg><span>Hasta 3 grupos · miembros ilimitados</span></li>
+<li><svg class="chk" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24" width="17"><path d="M5 12.5l4.5 4.5L19 7"></path></svg><span>Reparto manual y saldos</span></li>
+<li><svg class="chk" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24" width="17"><path d="M5 12.5l4.5 4.5L19 7"></path></svg><span>Pagos simplificados (mínimas transferencias)</span></li>
+<li><svg class="chk" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24" width="17"><path d="M5 12.5l4.5 4.5L19 7"></path></svg><span>Logros y gamificación</span></li>
+<li><svg class="chk" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24" width="17"><path d="M5 12.5l4.5 4.5L19 7"></path></svg><span>IA: 3 escaneos + 3 por voz + 3 por texto al mes</span></li>
+</ul>
+</article>
+<!-- Pro -->
+<article class="price-card pro">
+<span class="pc-badge">Más popular</span>
+<div class="pc-name">Pro</div>
+<div class="pc-price annual"><span class="pc-amount">$4.99</span><span class="pc-per">/mes</span></div>
+<div class="pc-price monthly"><span class="pc-amount">$6.99</span><span class="pc-per">/mes</span></div>
+<div class="pc-sub annual">Facturado $59.99 USD/año</div>
+<div class="pc-sub monthly">Facturado mensualmente en USD</div>
+<div class="pc-daily annual">Menos de $0.17 al día</div>
+<div class="pc-daily monthly">Menos de $0.25 al día</div>
+<a class="btn-light pc-cta" href="https://app.settlia.app/">Prueba Pro 7 días</a>
+<div class="pc-note">7 días gratis · se pide tarjeta · cancela cuando quieras</div>
+<ul class="pc-feats">
+<li class="lead-in"><svg class="chk" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24" width="17"><path d="M5 12.5l4.5 4.5L19 7"></path></svg><span>Todo lo de Free, y además:</span></li>
+<li><svg class="chk" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24" width="17"><path d="M5 12.5l4.5 4.5L19 7"></path></svg><span>Grupos ilimitados</span></li>
+<li><svg class="chk" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24" width="17"><path d="M5 12.5l4.5 4.5L19 7"></path></svg><span>IA ilimitada: recibo + voz</span></li>
+<li><svg class="chk" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24" width="17"><path d="M5 12.5l4.5 4.5L19 7"></path></svg><span>Gastos recurrentes</span></li>
+<li><svg class="chk" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24" width="17"><path d="M5 12.5l4.5 4.5L19 7"></path></svg><span>Stats avanzadas y export</span></li>
+</ul>
+</article>
+</div>
+<p class="price-disclaimer">El precio por día es orientativo: resulta de dividir el importe facturado ($59.99 USD/año o $6.99 USD/mes). El cobro se hace por adelantado, no a diario. Impuestos no incluidos; el precio final puede variar según tu país.</p>
+</section>
+<!-- FAQ -->
+<section class="faq-sec" id="faq">
+<h2 class="sec-title">Preguntas frecuentes</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary>¿Settlia es gratis?</summary>
+<div class="faq-a">Sí. El plan gratuito incluye hasta 3 grupos, miembros ilimitados, reparto y saldos, y 3 usos de IA al mes de cada tipo (escaneo, voz y texto). Pro añade grupos ilimitados, IA ilimitada, gastos recurrentes y stats avanzadas.</div>
+</details>
+<details class="faq-item">
+<summary>¿Mis amigos necesitan la app?</summary>
+<div class="faq-a">Sí. Cada miembro usa Settlia con su propia cuenta gratuita, así los saldos se sincronizan para todos. Los invitas con un enlace; tardan segundos en entrar.</div>
+</details>
+<details class="faq-item">
+<summary>¿Cómo funciona la IA? ¿Es fiable?</summary>
+<div class="faq-a">Escribes, hablas o haces una foto del ticket y la IA crea el gasto. Siempre te muestra lo que asumió y confirmas antes de guardar; tú tienes la última palabra.</div>
+</details>
+<details class="faq-item">
+<summary>¿Settlia gestiona el dinero?</summary>
+<div class="faq-a">No. Settlia calcula quién debe a quién y muestra los datos de pago de cada uno; el pago lo haces con tu propia app bancaria. No procesamos ni custodiamos dinero.</div>
+</details>
+<details class="faq-item">
+<summary>¿Sirve para un piso compartido?</summary>
+<div class="faq-a">Sí. Crea el grupo como «Casa»: cuentas continuas, gastos recurrentes (alquiler, internet) y recordatorios para saldar cuando toque.</div>
+</details>
+<details class="faq-item">
+<summary>¿Mis datos están seguros?</summary>
+<div class="faq-a">Sí: cifrado en tránsito, seguridad a nivel de fila (cada uno solo ve sus grupos) y puedes borrar tu cuenta cuando quieras. Más en la <a href="/privacy.html">política de privacidad</a>.</div>
+</details>
+<details class="faq-item">
+<summary>¿Puedo instalarla en el móvil?</summary>
+<div class="faq-a">Sí. Settlia es una PWA: ábrela en el navegador y «Añadir a pantalla de inicio». También está disponible en la App Store. En Android funciona hoy mismo en el navegador — la versión de Google Play está en camino.</div>
+</details>
+</div>
+<p class="faq-support">¿No encuentras lo que buscas? Escríbenos a <a href="mailto:hello@settlia.app">hello@settlia.app</a>.</p>
+</section>
+<!-- CTA -->
+<section class="cta-sec" id="cta">
+<div class="cta-card">
+<h2>Deja de perseguir a tus amigos por dinero.</h2>
+<p>Crea tu primer grupo gratis. Sin tarjeta, sin líos.</p>
+<div class="store-badges on-dark">
+<a aria-label="App Store" class="store-badge" href="https://apps.apple.com/app/settlia/id6787267468" rel="noopener" target="_blank">
+<svg aria-hidden="true" class="sb-ic" fill="currentColor" viewbox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path></svg>
+<span class="sb-tx"><small>Descárgalo en</small><b>App Store</b></span>
+</a>
+<a aria-label="Android" class="store-badge" href="https://app.settlia.app/?utm_source=landing&amp;utm_medium=badge&amp;utm_campaign=android">
+<span class="sb-soon">Web</span>
+<svg aria-hidden="true" class="sb-ic" fill="currentColor" viewbox="0 0 512 512"><path d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"></path></svg>
+<span class="sb-tx"><small>En Android, úsala en</small><b>el navegador</b></span>
+</a>
+</div>
+</div>
+</section>
+<footer class="foot">
+<span>Settlia · gastos en grupo, sin líos.</span>
+<span class="foot-legal">
+<a href="mailto:hello@settlia.app">hello@settlia.app</a>
+<a href="/privacy.html">Privacidad</a>
+<a href="/terms.html">Términos</a>
+</span>
+<span class="muted">© 2026 Settlia</span>
+</footer>
+<script>
+      (function () {
+        var KEY = "settly-landing-lang";
+        function getLang() {
+          try { var l = localStorage.getItem(KEY); if (l === "es" || l === "en") return l; } catch (e) {}
+          return "en";
+        }
+        function apply(lang) {
+          document.documentElement.lang = lang;
+          document.querySelectorAll("[data-es]").forEach(function (el) {
+            if (!el.hasAttribute("data-en")) el.setAttribute("data-en", el.textContent);
+            el.textContent = lang === "es" ? el.getAttribute("data-es") : el.getAttribute("data-en");
+          });
+          document.querySelectorAll("[data-es-html]").forEach(function (el) {
+            if (!el.hasAttribute("data-en-html")) el.setAttribute("data-en-html", el.innerHTML);
+            el.innerHTML = lang === "es" ? el.getAttribute("data-es-html") : el.getAttribute("data-en-html");
+          });
+          document.querySelectorAll("[data-lang]").forEach(function (b) {
+            b.classList.toggle("on", b.getAttribute("data-lang") === lang);
+          });
+        }
+        function setLang(lang) { try { localStorage.setItem(KEY, lang); } catch (e) {} apply(lang); }
+        document.addEventListener("click", function (e) {
+          var b = e.target.closest("[data-lang]");
+          if (b) { e.preventDefault(); setLang(b.getAttribute("data-lang")); }
+        });
+        
+      })();
+
+      (function () {
+        document.querySelectorAll("[data-slideshow]").forEach(function (root) {
+          var slides = root.querySelectorAll(".slide");
+          var dots = root.querySelectorAll(".dot");
+          var caps = root.querySelectorAll(".cap");
+          if (!slides.length) return;
+          var i = 0,
+            timer;
+          function show(n) {
+            i = n;
+            slides.forEach(function (s, k) { s.classList.toggle("on", k === n); });
+            dots.forEach(function (d, k) { d.classList.toggle("on", k === n); });
+            caps.forEach(function (c, k) { c.classList.toggle("on", k === n); });
+          }
+          function next() { show((i + 1) % slides.length); start(); }
+          // Cada slide dura lo suyo (data-ms): las capturas con scroll animado
+          // necesitan tiempo proporcional a lo que recorren. Sin data-ms se
+          // mantiene el ritmo de siempre.
+          function hold(n) { return +slides[n].getAttribute("data-ms") || 2800; }
+          function start() { clearTimeout(timer); timer = setTimeout(next, hold(i)); }
+          dots.forEach(function (d) {
+            d.addEventListener("click", function () {
+              clearTimeout(timer);
+              show(+d.getAttribute("data-i"));
+              start();
+            });
+          });
+          start();
+        });
+      })();
+
+      (function () {
+        var sec = document.getElementById("pricing");
+        if (!sec) return;
+        sec.querySelectorAll(".bill-opt").forEach(function (b) {
+          b.addEventListener("click", function () {
+            sec.querySelectorAll(".bill-opt").forEach(function (x) { x.classList.toggle("on", x === b); });
+            sec.classList.toggle("bill-monthly", b.getAttribute("data-bill") === "monthly");
+          });
+        });
+      })();
+    </script>
+</body>
+</html>
