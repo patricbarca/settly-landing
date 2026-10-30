@@ -1,105 +1,255 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://settlia.app/</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-10-30</lastmod>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/"/>
   </url>
   <url>
-    <loc>https://settlia.app/blog-dividir-gastos-viaje.html</loc>
-    <lastmod>2026-06-24</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://settlia.app/es/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/blog/group-expense-app.html</loc>
+    <lastmod>2026-10-30</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/group-expense-app.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/group-expense-app.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/group-expense-app.html"/>
   </url>
   <url>
-    <loc>https://settlia.app/blog-gastos-piso-compartido.html</loc>
-    <lastmod>2026-06-24</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://settlia.app/es/blog/group-expense-app.html</loc>
+    <lastmod>2026-10-30</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/group-expense-app.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/group-expense-app.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/group-expense-app.html"/>
   </url>
   <url>
-    <loc>https://settlia.app/blog-dividir-cuentas-con-ia.html</loc>
-    <lastmod>2026-06-24</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://settlia.app/blog/ask-friends-to-pay-you-back.html</loc>
+    <lastmod>2026-10-30</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/ask-friends-to-pay-you-back.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/ask-friends-to-pay-you-back.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/ask-friends-to-pay-you-back.html"/>
   </url>
   <url>
-    <loc>https://settlia.app/blog-app-gastos-grupos-compartidos.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://settlia.app/es/blog/ask-friends-to-pay-you-back.html</loc>
+    <lastmod>2026-10-30</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/ask-friends-to-pay-you-back.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/ask-friends-to-pay-you-back.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/ask-friends-to-pay-you-back.html"/>
   </url>
   <url>
-    <loc>https://settlia.app/blog-splitwise-alternative.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://settlia.app/blog/track-spending-bank-statement.html</loc>
+    <lastmod>2026-10-30</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/track-spending-bank-statement.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/track-spending-bank-statement.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/track-spending-bank-statement.html"/>
   </url>
   <url>
-    <loc>https://settlia.app/blog-dividir-cuenta-restaurante.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://settlia.app/es/blog/track-spending-bank-statement.html</loc>
+    <lastmod>2026-10-30</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/track-spending-bank-statement.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/track-spending-bank-statement.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/track-spending-bank-statement.html"/>
   </url>
   <url>
-    <loc>https://settlia.app/links.html</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://settlia.app/blog/split-restaurant-bill.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/split-restaurant-bill.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/split-restaurant-bill.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/split-restaurant-bill.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/es/blog/split-restaurant-bill.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/split-restaurant-bill.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/split-restaurant-bill.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/split-restaurant-bill.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/blog/split-bills-with-ai.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/split-bills-with-ai.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/split-bills-with-ai.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/split-bills-with-ai.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/es/blog/split-bills-with-ai.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/split-bills-with-ai.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/split-bills-with-ai.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/split-bills-with-ai.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/blog/split-travel-expenses.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/split-travel-expenses.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/split-travel-expenses.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/split-travel-expenses.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/es/blog/split-travel-expenses.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/split-travel-expenses.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/split-travel-expenses.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/split-travel-expenses.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/blog/split-utility-bills-flatmates.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/split-utility-bills-flatmates.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/split-utility-bills-flatmates.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/split-utility-bills-flatmates.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/es/blog/split-utility-bills-flatmates.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/split-utility-bills-flatmates.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/split-utility-bills-flatmates.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/split-utility-bills-flatmates.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/blog/split-expenses-as-a-couple.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/split-expenses-as-a-couple.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/split-expenses-as-a-couple.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/split-expenses-as-a-couple.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/es/blog/split-expenses-as-a-couple.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/split-expenses-as-a-couple.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/split-expenses-as-a-couple.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/split-expenses-as-a-couple.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/blog/personal-and-shared-expenses.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/personal-and-shared-expenses.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/personal-and-shared-expenses.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/personal-and-shared-expenses.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/es/blog/personal-and-shared-expenses.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/personal-and-shared-expenses.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/personal-and-shared-expenses.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/personal-and-shared-expenses.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/blog/shared-flat-expenses.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/shared-flat-expenses.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/shared-flat-expenses.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/shared-flat-expenses.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/es/blog/shared-flat-expenses.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/shared-flat-expenses.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/shared-flat-expenses.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/shared-flat-expenses.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/blog/multi-currency-expenses.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/multi-currency-expenses.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/multi-currency-expenses.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/multi-currency-expenses.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/es/blog/multi-currency-expenses.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/multi-currency-expenses.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/multi-currency-expenses.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/multi-currency-expenses.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/blog/splitwise-alternative.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/splitwise-alternative.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/splitwise-alternative.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/splitwise-alternative.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/es/blog/splitwise-alternative.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/splitwise-alternative.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/splitwise-alternative.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/splitwise-alternative.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/blog/tricount-vs-splitwise.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/tricount-vs-splitwise.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/tricount-vs-splitwise.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/tricount-vs-splitwise.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/es/blog/tricount-vs-splitwise.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/tricount-vs-splitwise.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/tricount-vs-splitwise.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/tricount-vs-splitwise.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/blog/best-expense-splitting-apps.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/best-expense-splitting-apps.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/best-expense-splitting-apps.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/best-expense-splitting-apps.html"/>
+  </url>
+  <url>
+    <loc>https://settlia.app/es/blog/best-expense-splitting-apps.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settlia.app/blog/best-expense-splitting-apps.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settlia.app/es/blog/best-expense-splitting-apps.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settlia.app/blog/best-expense-splitting-apps.html"/>
   </url>
   <url>
     <loc>https://settlia.app/privacy.html</loc>
-    <lastmod>2026-06-24</lastmod>
-    <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://settlia.app/terms.html</loc>
-    <lastmod>2026-06-24</lastmod>
-    <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://settlia.app/blog-gastos-pareja.html</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://settlia.app/blog-gastos-varias-monedas.html</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://settlia.app/blog-cobrar-a-amigos.html</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://settlia.app/blog-tricount-vs-splitwise.html</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://settlia.app/blog-facturas-piso.html</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://settlia.app/blog-controlar-gastos-extracto-banco.html</loc>
-    <lastmod>2026-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://settlia.app/blog-gastos-personales-y-compartidos.html</loc>
-    <lastmod>2026-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://settlia.app/links.html</loc>
+    <priority>0.3</priority>
   </url>
 </urlset>

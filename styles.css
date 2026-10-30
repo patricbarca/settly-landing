@@ -646,3 +646,5 @@ h1 { font-size: 58px; font-weight: 800; line-height: 1.02; }
   .flow-stage .slide.on img { animation: none; }
 }
 @media (max-width: 720px) { .flows { gap: 34px; } }
+.nav .lang-toggle a, .lang-toggle a { display: inline-block !important; font-size: 12px; font-weight: 700; color: var(--muted); padding: 4px 9px; border-radius: 999px; text-decoration: none; }
+.lang-toggle a.on { background: #1a1c22; color: #fff; }
